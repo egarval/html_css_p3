@@ -1,0 +1,214 @@
+<!doctype html>
+
+<!-- Idioma español de España-->
+<html lang="es-ES">
+
+<head>
+
+    <!-- Metadatos del head -->
+
+    <!-- Codificación de caracteres-->
+    <meta charset="utf-8">
+    <!-- Diseño web responsive -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Author/Description/Keywords -->
+    <meta name="author" content="Efrén García Valencia">
+    <meta name="description"
+        content="Página Naturae Hub index para el trabajo PEC 3 de la asignatura de HTML y CSS; tiene una explicación de que es la web y opciones para suscribirse a un newsletter">
+
+    <!-- Icono personalizado -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- Enlace al .css en archivo aparte -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Titulo a mostrar en el navegador-->
+    <title>naturaeHub</title>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <!-- Logotipo -->
+        <h1>
+            <a href="index.html" title="Página Naturae Hub index para el trabajo PEC 3 ubidada dentro del header">
+                <picture>
+                    <!-- ¿Uso de source?: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture-->
+                    <img src="img/logotip.svg" alt="Logotipo de la página web naturaeHub para el header">
+                </picture>
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="tema-del-mes.html" title="Página TEMA DEL MES para el trabajo PEC 3">Tema del mes</a></li>
+                <li><a href="blog.html" title="Página BLOG para el trabajo PEC 3">Blog</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+
+        <section>
+
+            <!-- Colocar el texto dentro de la imagen con el uso de position -->
+            <div class="textoImagenIndex">
+                <header>
+                    <h2>Naturae Hub</h2>
+                    <h3> Un espacio para los defensores del medio ambiente</h3>
+                </header>
+            </div>
+
+            <figure>
+                <img src="img/hero-image-home.jpg" alt="Imagen de fondo para mostrar en el index donde se ve unas colinas">
+                <figcaption>
+                    <!-- ¿Atributos del cite? Ver lecciones p1-->
+                    <cite>
+                        Foto de
+                        <a href="https://unsplash.com/@ideasboom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                            title="Perfil de unsplash de Qinbao Meng">Qingbao Meng</a>
+                        en
+                        <a href="https://unsplash.com/photos/birds-eye-view-photograph-of-greenmountains01_igFr7hd4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                            title="Trabajo de Qinbao Meng en unsplash">Unsplash</a>
+                    </cite>
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <section>
+            <header>
+                <h2>¿Qué es Naturae Hub?</h2>
+            </header>
+
+            <p>
+                Naturae Hub es un espacio digital donde la belleza y el poder del entorno natural
+                se quieren encontrar con la acción, el aprendizaje y la conciencia ambiental.
+            </p>
+
+            <p>
+                Inspirar y educar es lo que persigue Naturae Hub, porque las personas deben vivir
+                en consonancia con la naturaleza.
+            </p>
+
+            <p>
+                Sé parte del cambio, suscríbete a nuestra newsletter
+            </p>
+
+            <!-- Elemento &nbsp; para que no salte fallo del validador -->
+            <form action="&nbsp;" method="post">
+
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombreUsuario" required>
+                </div>
+
+                <div>
+                    <label for="correo"> Correo electrónico</label>
+                    <input type="email" id="correo" name="correoElectronico" required>
+                </div>
+
+                <p>
+                    <input type="checkbox" name="checkPrivacidad" id="checkPrivacidad">
+                    <label for="checkPrivacidad">
+                        He leído y acepto la
+                        <a href="" title="Información relativa a la política de privacidad">política de privacidad</a>
+                    </label>
+                </p>
+
+                <!-- Botón de envío -->
+                <p>
+                    <button type="submit">Suscríbeme</button>
+                </p>
+            </form>
+        </section>
+
+        <article>
+            <header>
+                <h2>Historias de cambio</h2>
+            </header>
+
+            <p>
+                Historias de personas y comunidades que con sus iniciativas están marcando la
+                diferencia en la protección y conservación del medio ambiente. Si conoces otras
+                historias o eres su protagonista, 
+            
+                <a href="mailto:historias@naturehub.org.net" title="Enviar un correo a historias naturehub">cuéntanoslo</a> 
+                .
+            </p>
+
+            <section>
+                <h3><a href="" title="Ttulo del apartado, es el primer enlace que sale">Creando bosques urbanos</a></h3>
+                <p>Un grupo de estudiantes decidió plantar árboles en terrenos descuidados de su
+                    ciudad; querían transformar áreas grises e insalubres en pulmones verdes…</p>
+                <p><a href="" title="Para saber más sobre el tema, es el primer enlace que sale">Saber más</a> </p>
+            </section>
+
+            <section>
+                <h3><a href="" title="Título del apartado, es el segundo enlace que sale">Un refugio para las abejas</a></h3>
+                <p>Los vecinos de Vallrosada han decidido enfrentarse a la disminución de las abejas.
+                    Han recuperado terrenos baldíos, los han plantado de flores y han construido una
+                    granja de apicultura comunitaria…</p>
+                <p><a href="" title="Para saber más sobre el tema, es el segundo enlace que sale">Saber más</a> </p>
+            </section>
+
+            <section>
+                <h3><a href="" title="Título del apartado, es el tercer enlace que sale">Convertir un río en un oasis de vida</a></h3>
+                <p>Su río había sido devastado por la contaminación. La determinación de todo el
+                    pueblo ha conseguido rescatarlo; hoy es un ejemplo de cómo es posible recuperar
+                    un ecosistema…</p>
+                <p><a href="" title="Para saber más sobre el tema, es el tercer enlace que sale">Saber más</a> </p>
+            </section>
+        </article>
+
+    </main>
+
+    <footer>
+
+        <picture>
+            <!-- ¿Uso de source?: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture-->
+            <img src="img/logotip-n.svg" alt="Logotipo de la página web naturaeHub para el footer">
+        </picture>
+
+        <p>
+            2024-2025. Efrén García Valencia.
+        </p>
+
+        <ul>
+            <li>
+                <a href="" title="Instagram de la página web asociada">
+                    <picture>
+                        <!-- ¿Uso de source?: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture-->
+                        <img src="img/instagram.svg" alt="Icono de instagram para el footer">
+                    </picture>
+                </a>
+            </li>
+            <li>
+                <a href="" title="Youtube de la página web asociada">
+                    <picture>
+                        <!-- ¿Uso de source?: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture-->
+                        <img src="img/youtube.svg" alt="Icono de youtube para el footer">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <ul>
+            <li><a href="" title="Página POLÍTCA DE PRIVACIDAD para el trabajo PEC 3">Política de privacidad</a></li>
+            <li><a href="" title="Página POLÍTICA DE COOKIES para el trabajo PEC 3">Política de cookies</a></li>
+            <li><a href="" title="Página AVISO LEGAL para el trabajo PEC 3">Aviso legal</a></li>
+        </ul>
+
+    </footer>
+
+
+</body>
+
+</html>
