@@ -1,4 +1,151 @@
+
+/* MODELO DE CAJA ALTERNATIVO */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+header, footer {
+    /* Extender header y footer al 100% del ancho permitido */
+    width: 100%;
+}
+
+body {
+    /* Fondo del body de las páginas */
+    background-color: rgb(242, 242, 230);
+}
+
+/* FOOTER */ 
+
 footer {
-    background-color: black;
-    color: white;
+    /* Color de fondo del footer */
+    background-color: rgb(0, 0, 0);
+    /* Textos dentro del footer de las páginas*/
+    color: rgb(255, 255, 255);
+}
+
+p {
+    /* Color de los textos */
+    color: rgb(0, 0, 0);
+}
+
+a {
+    /* Color de los enlaces */
+    color: rgb(0, 0, 0);   
+}
+
+button {
+    /* Color de los bordes del botón */
+    border-color: rgb(0, 0, 0);
+}
+
+.enlaceBoton {
+    /* Color de los bordes de los enlaces en forma de botón */
+    border-color: rgb(0, 0, 0); 
+}
+
+.enlaceBotonPaginacion {
+    /* Color de los bordes de los enlaces en forma de botón de la paginación */
+    border-color: rgb(0, 0, 0); 
+}
+
+.enlaceBotonPaginacion a:hover {
+    /* Estado :hover de los enlaces de paginación de blog.html */
+    color: rgb(0, 0, 0); 
+    /* Color de fondo en el estado :hover de los enlaces de paginación al final de la página blog.html */
+    background-color: rgb(64, 195, 130);
+}
+
+.enlaceBotonPaginacion .paginaActual {
+    /* Enlace de página actual de los enlaces de paginación al final de la página blog.html */
+    background-color: rgb(64, 195, 130);
+}
+
+/* Header común a todas las páginas */
+body + header  {
+    /* Fondo del header de las páginas */
+    background-color: (255, 255, 255)
+}
+
+/* ENLACES MENU NAVEGACION PRINCIPAL */
+header a:hover {
+    /* Estado :hover de los enlaces del menú de navegación principal */
+    color: rgb(64, 195, 130); 
+}
+
+/* ENLACES FOOTER */
+footer a:hover {
+    /* Estado :hover de los enlaces dentro del footer de las páginas */
+    color: rgb(64, 195, 130); 
+}
+
+/* IMAGEN DE FONDO INDEX.HTML*/
+.textoImagenIndex {
+    /* Texto sobre la imagen de fondo de la página idex.html */
+    color: rgb(255, 255, 255);
+}
+
+/* FORMULARIO */
+input {
+    /* Fondo de los controles del formulario de la página index.html */
+    background-color: (255, 255, 255)
+}
+
+/* TARJETAS */
+.tarjeta {
+    /* Fondo de las tarjetas index.html +  blog.html */
+    background-color: rgb(255, 255, 255);
+}
+
+/* TEXTO DESTACADO ENERO 2025 */
+.marcarTexto {
+    /* Texto destacado sobre verde en la página tema-del-mes.html */
+    color: rgb(255, 255, 255);
+    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
+    background-color: rgb(64, 195, 130); ;
+}
+
+/* MARCO BLANCO IMAGENES tema-del-mes */
+.marcoBlanco {
+    /* Marcos de las imágenes en la página tema-del-mes.html */
+    border: 0.1rem solid rgb(255, 255, 255);
+}
+
+/* TITULARES QUE SE PRESENTAN COMO ENLACES */
+h3 a:hover {
+    /* Estado :hover de los titulares que se preparan como enlaces */
+    color: rgb(64, 195, 130); 
+}
+
+/* NAVEGACION INTERNA tema-del-mes.html */
+
+.navInterior a::after {
+    /* Colocar punto de separación */
+    margin: 1em; 
+    content: "\1F784";
+    /* Color del punto separador */
+    color:rgb(64, 195, 130); 
+}
+
+.navInterior a:hover {
+    /* Estado :hover de los enlaces del menú interior de la página tema-del-mes.html */
+    color: rgb(64, 195, 130); 
+}
+
+/* NAVEGACION DE LA PAGINA post.html */
+.rutaNavegacion:hover {
+    /* Estado :hover de los enlaces de la ruta de navegación al principio de la página post.html */
+    color: rgb(64, 195, 130); 
+}
+
+cite {
+    /* Fondo de los textos de crédito de las imágenes */
+    background-color: rgba(242, 242, 230, 0.7);
 }
