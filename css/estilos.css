@@ -20,6 +20,8 @@ header, footer {
 body {
     /* Fondo del body de las páginas */
     background-color: rgb(242, 242, 230);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
 
 /* FOOTER */ 
@@ -34,11 +36,15 @@ footer {
 p {
     /* Color de los textos */
     color: rgb(0, 0, 0);
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 a {
     /* Color de los enlaces */
     color: rgb(0, 0, 0);   
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;    
 }
 
 button {
@@ -66,42 +72,56 @@ button {
 .enlaceBotonPaginacion .paginaActual {
     /* Enlace de página actual de los enlaces de paginación al final de la página blog.html */
     background-color: rgb(64, 195, 130);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
 
 /* Header común a todas las páginas */
 body + header  {
     /* Fondo del header de las páginas */
-    background-color: (255, 255, 255)
+    background-color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
 
 /* ENLACES MENU NAVEGACION PRINCIPAL */
 header a:hover {
     /* Estado :hover de los enlaces del menú de navegación principal */
     color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 /* ENLACES FOOTER */
 footer a:hover {
     /* Estado :hover de los enlaces dentro del footer de las páginas */
     color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 /* IMAGEN DE FONDO INDEX.HTML*/
 .textoImagenIndex {
     /* Texto sobre la imagen de fondo de la página idex.html */
     color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 /* FORMULARIO */
 input {
     /* Fondo de los controles del formulario de la página index.html */
-    background-color: (255, 255, 255)
+    background-color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
 
 /* TARJETAS */
 .tarjeta {
     /* Fondo de las tarjetas index.html +  blog.html */
     background-color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
 
 /* TEXTO DESTACADO ENERO 2025 */
@@ -122,6 +142,8 @@ input {
 h3 a:hover {
     /* Estado :hover de los titulares que se preparan como enlaces */
     color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 /* NAVEGACION INTERNA tema-del-mes.html */
@@ -132,20 +154,28 @@ h3 a:hover {
     content: "\1F784";
     /* Color del punto separador */
     color:rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 .navInterior a:hover {
     /* Estado :hover de los enlaces del menú interior de la página tema-del-mes.html */
     color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 /* NAVEGACION DE LA PAGINA post.html */
 .rutaNavegacion:hover {
     /* Estado :hover de los enlaces de la ruta de navegación al principio de la página post.html */
     color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
 
 cite {
     /* Fondo de los textos de crédito de las imágenes */
     background-color: rgba(242, 242, 230, 0.7);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
 }
