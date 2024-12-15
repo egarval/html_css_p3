@@ -12,6 +12,11 @@
 
 }
 
+html {
+    /* Tipografía usada en toda la web */
+    font-family: 'Alegreya', sans-serif;
+}
+
 header, footer {
     /* Extender header y footer al 100% del ancho permitido */
     width: 100%;
