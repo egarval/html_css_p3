@@ -1,6 +1,16 @@
+/* CONTENIDO GLOBAL A TODO EL DOCUMENTO */
 
-/* MODELO DE CAJA ALTERNATIVO */
+html {
+    /* Definir un tamaño en px en el html para que redimensionar con unidades rem sea más fácil */
+    font-size: 10px;
+    /* Modelo de cajas alternativo */
+    box-sizing: border-box;
+    /* Tipografía usada en toda la web */
+    font-family: 'Alegreya', sans-serif;
+}
+
 * {
+    /* Modelo de cajas alternativo */
     margin: 0;
     padding: 0;
 }
@@ -8,13 +18,9 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    /* Todos los elementos heredan el modelo de caja alternativo */
+    box-sizing: inherit;
 
-}
-
-html {
-    /* Tipografía usada en toda la web */
-    font-family: 'Alegreya', sans-serif;
 }
 
 header, footer {
@@ -29,15 +35,6 @@ body {
     color: inherit;
 }
 
-/* FOOTER */ 
-
-footer {
-    /* Color de fondo del footer */
-    background-color: rgb(0, 0, 0);
-    /* Textos dentro del footer de las páginas*/
-    color: rgb(255, 255, 255);
-}
-
 p {
     /* Color de los textos */
     color: rgb(0, 0, 0);
@@ -45,122 +42,92 @@ p {
     background-color: inherit;
 }
 
+/* ENLACES A NIVEL GENERAL */
+
 a {
     /* Color de los enlaces */
     color: rgb(0, 0, 0);   
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;    
+    /* Subrayado con puntos en un enlace */
+    text-decoration:underline;
+    text-decoration-style: dotted;
 }
+
+a:hover {
+    /* Mostrar enlace con borde de línea continua */
+    text-decoration-style: initial;
+}
+
+/* BOTON + ENLACES EN FORMA DE BOTON */
 
 button {
     /* Color de los bordes del botón */
     border-color: rgb(0, 0, 0);
 }
 
-.enlaceBoton {
+.enlaceBoton a, .enlaceBotonPaginacion a {
     /* Color de los bordes de los enlaces en forma de botón */
-    border-color: rgb(0, 0, 0); 
+    border: 0.1rem solid rgb(0, 0, 0); 
+    /* Quitar el subrayado*/
+    text-decoration: none;
 }
 
-.enlaceBotonPaginacion {
-    /* Color de los bordes de los enlaces en forma de botón de la paginación */
-    border-color: rgb(0, 0, 0); 
+.enlace a {
+    /* Fondo de color transparente*/
+    background-color: transparent;    
 }
 
-.enlaceBotonPaginacion a:hover {
-    /* Estado :hover de los enlaces de paginación de blog.html */
-    color: rgb(0, 0, 0); 
-    /* Color de fondo en el estado :hover de los enlaces de paginación al final de la página blog.html */
+.enlaceBotonPaginacion a {
+    /* Fondo blanco enlaces paginacion */
+    background-color: rgb(255, 255, 255);  
+}
+
+.enlaceBoton a:hover {
+    /* Cambio de color del borde en su estado hover */
+    border: 0.1rem solid rgb(64, 195, 130); 
+}
+
+.enlaceBotonPaginacion a:hover, .enlaceBotonPaginacion .paginaActual {
+    /* Quito el color de borde pese a que el documento diga que sea verde porque si no me da warning el validador CSS */
+    border: none; 
+    /* Enlace de página actual de los enlaces de paginación al final de la página blog.html + elementos seleccionados del menu de paginacion */
     background-color: rgb(64, 195, 130);
+    /* Color de texto */
+     color: rgb(255, 255, 255);
 }
 
-.enlaceBotonPaginacion .paginaActual {
-    /* Enlace de página actual de los enlaces de paginación al final de la página blog.html */
-    background-color: rgb(64, 195, 130);
-    /* Evitar que el validador CSS tenga problemas */
-    color: inherit;
-}
+
+/* MENU NAVEGACION PRINCIPAL */
 
 /* Header común a todas las páginas */
-body + header  {
+body > header  {
     /* Fondo del header de las páginas */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
 }
 
-/* ENLACES MENU NAVEGACION PRINCIPAL */
-header a:hover {
+body > header nav a {
+    /* Quitar el subrayado */
+    text-decoration: none;
+}
+
+body > header nav a:hover {
     /* Estado :hover de los enlaces del menú de navegación principal */
     color: rgb(64, 195, 130); 
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
+    /* Quitar el subrayado */
+    text-decoration: none;
 }
 
-/* ENLACES FOOTER */
-footer a:hover {
-    /* Estado :hover de los enlaces dentro del footer de las páginas */
-    color: rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
-}
-
-/* IMAGEN DE FONDO INDEX.HTML*/
-.textoImagenIndex {
-    /* Texto sobre la imagen de fondo de la página idex.html */
-    color: rgb(255, 255, 255);
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
-}
-
-/* FORMULARIO */
-input {
-    /* Fondo de los controles del formulario de la página index.html */
-    background-color: rgb(255, 255, 255);
-    /* Evitar que el validador CSS tenga problemas */
-    color: inherit;
-}
-
-/* TARJETAS */
-.tarjeta {
-    /* Fondo de las tarjetas index.html +  blog.html */
-    background-color: rgb(255, 255, 255);
-    /* Evitar que el validador CSS tenga problemas */
-    color: inherit;
-}
-
-/* TEXTO DESTACADO ENERO 2025 */
-.marcarTexto {
-    /* Texto destacado sobre verde en la página tema-del-mes.html */
-    color: rgb(255, 255, 255);
-    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
-    background-color: rgb(64, 195, 130); ;
-}
-
-/* MARCO BLANCO IMAGENES tema-del-mes */
-.marcoBlanco {
-    /* Marcos de las imágenes en la página tema-del-mes.html */
-    border: 0.1rem solid rgb(255, 255, 255);
-}
-
-/* TITULARES QUE SE PRESENTAN COMO ENLACES */
-h3 a:hover {
-    /* Estado :hover de los titulares que se preparan como enlaces */
-    color: rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
-}
 
 /* NAVEGACION INTERNA tema-del-mes.html */
 
-.navInterior a::after {
-    /* Colocar punto de separación */
-    margin: 1em; 
-    content: "\1F784";
-    /* Color del punto separador */
-    color:rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
+.navInterior a {
+    /* Quitar subrayado navegacion interna */
+    text-decoration: none;
 }
 
 .navInterior a:hover {
@@ -170,17 +137,147 @@ h3 a:hover {
     background-color: inherit;
 }
 
+.llevaPunto::after {
+    /* Colocar punto de separación */
+    margin: 1em; 
+    content: "\1F784";
+    /* Color del punto separador */
+    color:rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
 /* NAVEGACION DE LA PAGINA post.html */
-.rutaNavegacion:hover {
+
+.llevaFlecha::after {
+    margin: 1em; 
+    /* Elemento separador > entre los diferentes elementos */
+    content: "\003E";       
+}
+
+.rutaNavegacion a:hover  {
     /* Estado :hover de los enlaces de la ruta de navegación al principio de la página post.html */
     color: rgb(64, 195, 130); 
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
 }
 
+.rutaNavegacion a{
+    /* Eliminar subrayado */
+    text-decoration: none;
+}
+
+.rutaNavegacion a:hover  {
+    /* Estado :hover de los enlaces de la ruta de navegación al principio de la página post.html */
+    color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
+/* GESTION DE LAS TARJETAS */
+
+.tarjeta {
+    /* Fondo de las tarjetas index.html +  blog.html */
+    background-color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
+}
+
+
+/* FORMULARIO */
+
+input {
+    /* Fondo de los controles del formulario de la página index.html */
+    background-color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
+    /* Quitar el borde del juego */
+    border:none;
+}
+
+input:focus {
+    /* Se quita la línea que sale al seleccionar el campo del formulario */
+    outline: none;
+    /* Mostrar un borde de color negro */
+    border: 0.1rem solid rgb(0, 0, 0); 
+}
+
+
+/* FOOTER */ 
+
+footer {
+    /* Color de fondo del footer */
+    background-color: rgb(0, 0, 0);
+    /* Textos dentro del footer de las páginas*/
+    color: rgb(255, 255, 255);
+}
+
+footer a:hover {
+    /* Estado :hover de los enlaces dentro del footer de las páginas */
+    color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
+footer p {
+    /* Color de los textos del footer */
+    color: rgb(255, 255, 255);
+}
+
+footer a {
+    /* Color de los enlaces del footer */
+    color: rgb(255, 255, 255);   
+    /* Sin subrayado */
+    text-decoration: none;
+}
+
+.icono {
+    /* Cambiar la opacidad de los iconos del footer */
+    opacity: 0.7;
+}
+
+/* OTROS ELEMENTOS */
+
+/* Texto imagen fondo index.html */
+.textoImagenIndex {
+    /* Texto sobre la imagen de fondo de la página idex.html */
+    color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
+/* Cursor abreviaturas */
+abbr {
+    /* Cambio de la forma del cursor en las abreviaturas */
+    cursor: help;
+}
+
+/* Citas imagenes */
 cite {
     /* Fondo de los textos de crédito de las imágenes */
     background-color: rgba(242, 242, 230, 0.7);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
+}
+
+/* Texto destacado enero 2025 */
+.marcarTexto {
+    /* Texto destacado sobre verde en la página tema-del-mes.html */
+    color: rgb(255, 255, 255);
+    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
+    background-color: rgb(64, 195, 130); ;
+}
+
+/* Marco blanco imagenes tema-del-mes */
+.marcoBlanco {
+    /* Marcos de las imágenes en la página tema-del-mes.html */
+    border: 0.1rem solid rgb(255, 255, 255);
+}
+
+/* Titulares que se presentan como enlaces */
+h3 a:hover {
+    /* Estado :hover de los titulares que se preparan como enlaces */
+    color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
 }
