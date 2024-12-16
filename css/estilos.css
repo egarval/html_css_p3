@@ -42,6 +42,73 @@ p {
     background-color: inherit;
 }
 
+/* MEDIA QUERIES */
+
+/* Móvil */
+@media screen and (max-width: 599px) {
+    /* REVISAR */
+    .container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .containerMain {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+    /* REVISAR */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .containerMain {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Ordenador */
+@media screen and (min-width: 1200px) {
+    /* REVISAR */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .containerMain {
+        width: 100%;
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
 /* ENLACES A NIVEL GENERAL */
 
 a {
@@ -280,4 +347,9 @@ h3 a:hover {
     color: rgb(64, 195, 130); 
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
+}
+
+img {
+    /* Imágenes responsivas */
+    max-width: 100%;
 }

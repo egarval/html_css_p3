@@ -1,0 +1,13 @@
+Preguntar si es necesario el uso de <picture>, pues no hay imágenes alternativas.
+¿Esta bien la fuente de letra?
+¿Tipografias dentro de la web? No dice nada el pdf
+Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de aquí tengo que sacar algo? No parece que los mockups se estructuren así
+¿Compatibilidad con dispositivos viejos?
+¿Hay que usar cuadrículas flexibles? Aparecen en: https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design#tipograf%C3%ADa_responsiva
+¿Overflow hidden es necesario?
+
+tema-del-mes.html
+	¿Transformar en una tabla las diferentes secciones?
+	¿Transformar en una lista de definiciones las diferentes secciones?
+post.html
+	-> imagen ocupando el 100% de la anchura del viewport (con los datos del autor de la fotografía) 
