@@ -40,7 +40,7 @@
 
     <header>
 
-        <div class="container">
+        <div class="containerFull">
 
             <!-- Logotipo -->
             <h1>
@@ -52,7 +52,7 @@
                 <ul>
                     <li><a href="tema-del-mes.html" title="Página TEMA DEL MES para el trabajo PEC 3">TEMA DEL MES</a>
                     </li>
-                    <li><a href="blog.html" title="Página BLOG para el trabajo PEC 3">BLOG</a></li>
+                    <li class="navBlog"><a href="blog.html" title="Página BLOG para el trabajo PEC 3">BLOG</a></li>
                 </ul>
             </nav>
 
@@ -62,20 +62,18 @@
 
     <main>
 
-        <div class="containerMain">
+        <header>
 
-            <header>
-                <!-- Colocar el texto dentro de la imagen con el uso de position -->
+            <div class="containerFull">
                 <div class="textoImagenIndex">
                     <h2>Naturae Hub</h2>
                     <h3> Un espacio para los defensores del medio ambiente</h3>
                 </div>
 
                 <figure>
-                    <img src="img/hero-image-home.jpg"
+                    <img class="imagenPrincipal" src="img/hero-image-home.jpg"
                         alt="Imagen de fondo para mostrar en el index donde se ve unas colinas">
-                    <figcaption>
-                        <!-- ¿Atributos del cite? Ver lecciones p1-->
+                    <figcaption class="citaPrincipal">
                         <cite>
                             Foto de
                             <a href="https://unsplash.com/@ideasboom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
@@ -86,7 +84,10 @@
                         </cite>
                     </figcaption>
                 </figure>
-            </header>
+            </div>
+        </header>
+
+        <div class="containerMain">
 
             <article>
                 <header>
@@ -209,7 +210,7 @@
 
     <footer>
 
-        <div class="container">
+        <div class="containerFull">
 
             <img src="img/logotip-n.svg" alt="Logotipo de la página web naturaeHub para el footer">
 

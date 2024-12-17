@@ -5,6 +5,7 @@ Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de 
 ¿Compatibilidad con dispositivos viejos?
 ¿Hay que usar cuadrículas flexibles? Aparecen en: https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design#tipograf%C3%ADa_responsiva
 ¿Overflow hidden es necesario?
+¿El <cite> tiene atributos?
 
 tema-del-mes.html
 	¿Transformar en una tabla las diferentes secciones?

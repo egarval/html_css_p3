@@ -42,17 +42,24 @@ p {
     background-color: inherit;
 }
 
+figcaption cite, figcaption cite a {
+    /* Fondo de los textos de crédito de las imágenes */
+    background-color: rgba(242, 242, 230, 0.7);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
+    /* Margen interno cita*/
+    padding: 1rem;
+}
+
 /* MEDIA QUERIES */
 
 /* Móvil */
 @media screen and (max-width: 599px) {
-    /* REVISAR */
-    .container {
+    /* Contenedor que ocupa todo el contenido, se usa para el header, el footer y la imagen principal de la web (de momento) */
+    .containerFull {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     .containerMain {
@@ -67,13 +74,11 @@ p {
 /* Tablet */
 @media screen and (min-width: 600px) and (max-width: 1199px) {
     /* REVISAR */
-    .container {
+    .containerFull {
         width: 100%;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     .containerMain {
@@ -89,13 +94,11 @@ p {
 /* Ordenador */
 @media screen and (min-width: 1200px) {
     /* REVISAR */
-    .container {
+    .containerFull {
         width: 100%;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     .containerMain {
@@ -106,6 +109,66 @@ p {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+}
+
+/* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML */
+
+/* Texto Nature Hub Un espacio para los defensores del medio ambiente */
+.textoImagenIndex {
+    /* El DIV ocupa todo el ancho para que el texto se pueda centrar bien */
+    width: 100%;
+    /* Posicion absolute para que salga del flujo normal */
+    position: absolute;
+    /* Se alinea el texto en el centro*/
+    text-align: center;
+    /* Distancia con el extremo superior del navegador */
+    top: 35rem;
+}
+
+/* Texto Naturae Hub*/
+.textoImagenIndex h2 {
+    /* Tamaño de la fuente de letra */
+    font-size: 3rem;
+    /* Margen con el texto de abajo */
+    margin-bottom: 3rem;
+}
+
+/* Un espacio para los defensores del medio ambiente */
+.textoImagenIndex h3 {
+    /* Paddings para centrar el texto */
+    padding-left:4rem;
+    padding-right:4rem;
+    /* Tamaño de fuente */
+    font-size: 2rem;
+}
+
+/* Imagen central de index.html */
+.imagenPrincipal {
+    /* Para que ocupe todo el ancho */
+    width: 100%;
+    /* Tamaño fijo de altura a mantener sin importar la resolucion*/
+    height: 50rem;
+    /* Para mantener la relacion de aspecto mientras se rellena toda caja */
+    object-fit: cover;
+}
+
+/* Cita imagen principal index.html */
+.citaPrincipal {
+    /* Posicion relativa para colocar la cita dentro de la imagen */
+    position: relative;
+    /* Para ocupar todo el ancho */
+    width: 100%;
+    /* Espacio con el extremo derecho */
+    padding-right:3rem;
+    /* Alinear el texto a la derecha */
+    text-align: right;
+    /* Encajar el texto arriba */
+    top:-5rem;
+}
+
+.citaPrincipal cite {
+    /* Tipo de letra normal en vez de italica */
+    font-style: normal;
 }
 
 
@@ -168,16 +231,45 @@ button {
 /* MENU NAVEGACION PRINCIPAL */
 
 /* Header común a todas las páginas */
+
+/* Título de la web que contiene el enlace a la página principal*/
+h1 {
+    /* Márgenes internos */
+    padding-top:3rem;
+    padding-bottom: 1.5rem;
+    /* Alineación del texto */
+    text-align: center;
+}
+
 body > header  {
     /* Fondo del header de las páginas */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
+    /* Quitar margen de separacion con la imagen de abajo */
+    margin-bottom: -1rem;
+}
+
+/* Elementos de la lista de navegación*/
+body > header nav li {
+    /* Quitar el punto de la lista */
+    list-style: none;
+    /* Alinear el texto */
+    text-align: center;
+    /* Márgenes por todos los lados*/
+    margin: 0.5rem;
+}
+
+/* Último enlace de la lista de la navegación principal */
+.navBlog {
+    padding-bottom: 4rem;
 }
 
 body > header nav a {
     /* Quitar el subrayado */
     text-decoration: none;
+    /* Se aumenta el tamaño */
+    font-size: 1.5rem;
 }
 
 body > header nav a:hover {
@@ -319,13 +411,6 @@ abbr {
     cursor: help;
 }
 
-/* Citas imagenes */
-cite {
-    /* Fondo de los textos de crédito de las imágenes */
-    background-color: rgba(242, 242, 230, 0.7);
-    /* Evitar que el validador CSS tenga problemas */
-    color: inherit;
-}
 
 /* Texto destacado enero 2025 */
 .marcarTexto {
