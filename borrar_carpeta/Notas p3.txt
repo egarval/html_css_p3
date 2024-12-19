@@ -6,6 +6,8 @@ Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de 
 ¿Hay que usar cuadrículas flexibles? Aparecen en: https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design#tipograf%C3%ADa_responsiva
 ¿Overflow hidden es necesario?
 ¿El <cite> tiene atributos?
+¿Hay que incluir validaciones CSS de los inputs?
+Hacer que se vea el background del footer al ampliar la página
 
 tema-del-mes.html
 	¿Transformar en una tabla las diferentes secciones?

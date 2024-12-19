@@ -40,9 +40,27 @@ p {
     color: rgb(0, 0, 0);
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
+    /* Interlineado base */
+    line-height: 2rem;
+    /* Tamaño base */
+    font-size: 1.4rem;
+    /* Margen inferior */
+    margin-bottom: 2rem;
 }
 
-figcaption cite, figcaption cite a {
+header h2 {
+    /* Tamaño por defecto del h2 en los headers */
+    font-size:  2.5rem;
+    /* Margen inferior header h2*/
+    margin-bottom: 5rem;
+}
+
+section h3 {
+    /* Tamaño por defecto de las sections de la página */
+    font-size: 1.5rem;
+}
+
+figcaption cite {
     /* Fondo de los textos de crédito de las imágenes */
     background-color: rgba(242, 242, 230, 0.7);
     /* Evitar que el validador CSS tenga problemas */
@@ -50,6 +68,12 @@ figcaption cite, figcaption cite a {
     /* Margen interno cita*/
     padding: 1rem;
 }
+
+figcaption cite a {
+    /* Se reinicia el color para que no se sobreescriba en la cita */
+    background-color: initial;
+}
+
 
 /* MEDIA QUERIES */
 
@@ -62,10 +86,18 @@ figcaption cite, figcaption cite a {
         margin-right: auto;
     }
 
+    /* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
+    .coleccionTarjetas {
+        display: flex;
+        flex-direction: column;
+    }
+
     .containerMain {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -191,9 +223,21 @@ a:hover {
 
 /* BOTON + ENLACES EN FORMA DE BOTON */
 
+button, .enlaceBoton a, .enlaceBotonPaginacion a {
+    /* Márgenes internos del botón */
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 button {
-    /* Color de los bordes del botón */
-    border-color: rgb(0, 0, 0);
+    /* Borde del botón */
+    border: 0.1rem solid rgb(0, 0, 0);
+    /* Heredamos el color de fondo del botón */
+    background-color: inherit;
+    /* Margen con el texto inferior */
+    margin-bottom: 5rem;
 }
 
 .enlaceBoton a, .enlaceBotonPaginacion a {
@@ -340,18 +384,61 @@ body > header nav a:hover {
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
+    /* Margen superior externo de la tarjeta*/
+    margin-top: 3rem;
+    /* Márgenes internos de la tarjeta */
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+
+.tarjeta p {
+    /* Margen de la tarjeta con el texto de arriba */
+    margin-top: 2rem;
+}
+
+.tarjeta a {
+    /* Quitar decoración enlaces tarjetas */
+    text-decoration: none;
 }
 
 
 /* FORMULARIO */
 
-input {
+label {
+    /* Tamaño base de las labels */
+    font-size: 1.2rem;
+}
+
+.infoPrivacidad {
+    /* Tamaño base del texto "Antes de enviar tus datos... */
+    font-size: 1.1rem;
+}
+
+input[type="checkbox"]  {
+    /* Para alinear el check de privacidad con el texto */
+    vertical-align:middle;
+}
+
+input[type="text"], input[type="email"]  {
+    /* Disposición de bloque + propiedades asociadas para ajustar el recuadro en el centro */
+    display: block;
+    /* Margen interno del elemento para escribir */
+    padding: 0.6rem;
+    /* Margen superior con las labels asociadas*/
+    margin-top: 1rem;
+    /* Margen inferior */
+    margin-bottom: 1.5rem;
     /* Fondo de los controles del formulario de la página index.html */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
     /* Quitar el borde del juego */
     border:none;
+    /* Abarca el máximo ancho posible */
+    width: 100%;
 }
 
 input:focus {
@@ -369,6 +456,19 @@ footer {
     background-color: rgb(0, 0, 0);
     /* Textos dentro del footer de las páginas*/
     color: rgb(255, 255, 255);
+    /* Margen con las tarjetas*/
+    margin-top: 14rem;
+}
+
+footer .containerFull {
+    /* Para alinear en el centro el texto del footer del contenedor que abarca todo el espacio */
+    text-align: center;
+}
+
+/* Para la imagen que es hijo directo */
+footer .containerFull > img {
+    /* Margen de la imagen */
+    margin: 3rem;
 }
 
 footer a:hover {
@@ -381,6 +481,7 @@ footer a:hover {
 footer p {
     /* Color de los textos del footer */
     color: rgb(255, 255, 255);
+    
 }
 
 footer a {
@@ -388,6 +489,33 @@ footer a {
     color: rgb(255, 255, 255);   
     /* Sin subrayado */
     text-decoration: none;
+
+}
+
+.contenedorIconos {
+    /* Display flex para colocar los elementos hijos en línea */
+    display: flex;
+    /* Para colocar los elementos hijos en el centro respecto al resto del espacio */
+    justify-content: center; 
+    /* Espacio entre los elementos hijos */
+    gap: 0.5rem;
+}
+
+.contenedorIconos li {
+    /* Quitar listas de estilo */
+    list-style: none;
+}
+
+.enlacesAdicionalesFooter {
+    /* Para que se vea un espacio respecto al final de la página */
+    padding-bottom: 3rem;
+}
+
+.enlacesAdicionalesFooter li {
+    /* Márgenes entre los enlaces adicionales del footer */
+    margin: 1rem;
+    /* Tamaño de los enlaces */
+    font-size: 1.4rem;
 }
 
 .icono {
@@ -437,4 +565,10 @@ h3 a:hover {
 img {
     /* Imágenes responsivas */
     max-width: 100%;
+}
+
+
+article header {
+    /* Margen inferior texto título */
+    margin-bottom: 3rem;
 }
