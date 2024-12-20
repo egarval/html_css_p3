@@ -507,7 +507,7 @@ footer a {
 
 }
 
-.contenedorIconos {
+.navIconos {
     /* Display flex para colocar los elementos hijos en línea */
     display: flex;
     /* Para colocar los elementos hijos en el centro respecto al resto del espacio */
@@ -516,7 +516,7 @@ footer a {
     gap: 0.5rem;
 }
 
-.contenedorIconos li {
+.navIconos li {
     /* Quitar listas de estilo */
     list-style: none;
 }
@@ -623,7 +623,7 @@ abbr {
         /* Margenes internos a justificar */
         padding-left: 6rem;
         padding-top: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
         padding-right: 6rem;
     }
 
@@ -638,24 +638,62 @@ abbr {
         list-style: none;
     }
 
+    .navHeader li {
+        /* Margen interno superior respecto al borde de la pagina para los enlaces Tema del mes y Blog*/
+        padding-top: 2rem;
+    }
+
     .navHeader li:first-child a::after {
         /* Incluir el caracter barra larga como separador en la navegacion del header */
-        margin: 2rem;
         content: "\007C";
+        /* Se aumenta el tamaño para que se vea mejor */
         font-size: 2rem;
+        /* Margen de separacion izquierdo */
+        margin-left: 1.5rem;
     }
 
     .navBlog {
-        /* Se iguala el tamaño al del caracter para que quede alineado con el otro elemento de la lista */
-        font-size: 2rem;
-        /* Para dejar el mismo margen entre ambos lados de la barra */
-        margin-left: -0.5rem;
+        /* Margen izquierdo del elemento blog respecto a la barra */
+        margin-left: 1rem;
     }
 
-    .logotipo {
-        /* Se reduce el tamaño de los logotipos */
-        width: 80%;
-        height: auto;
+    .navBlog::after {
+        /* Creamos un content vacio con tamaño igual a los otros elementos de la lista para que quede el texto en la misma horizontal */
+        content:"";
+        font-size: 2rem;
+    }
+
+    .containerHFLeft img {
+        /* Margen superior negativo para alinear los logotipos del header y el footer */
+        margin-top: -2rem;
+    }
+
+    .containerHFLeft img + p {
+        /* Margen texto imagen icono superior nombre y apellidos */
+        margin-top: 3rem;
+    }
+
+    .navIconos {
+        /* Colocar los iconos al final del elemento flex */
+        justify-content: flex-end;
+        /* Margen con el menu de navegacion inferior */
+        margin-bottom: 2rem;
+        /* Margen derecho para alinear con el nav de abajo */
+        margin-right: 1rem;
+    } 
+
+
+    .llevaBarra::after {
+        /* Incluir el caracter barra larga como separador en la navegacion del footer */
+        margin-left: 2rem;
+        content: "\007C";
+        font-size: 2rem;   
+    }
+
+    .navFooter li:nth-child(3)::after {
+        /* Para que no quede desencajado el elemento final de la lista respecto del resto al incluir la barra separadora en el footer */
+        content:"";
+        font-size: 2rem;
     }
 
     /* CONTENIDO TEXTO PRINCIPAL INDEX */
