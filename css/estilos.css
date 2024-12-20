@@ -1,3 +1,6 @@
+/* El CSS toma como base el diseño móvil, adaptando las partes que sean necesarias en formato tablet y desktop */
+/* usando media queries al final del documento para evitar solapamientos por herencia */
+
 /* CONTENIDO GLOBAL A TODO EL DOCUMENTO */
 
 html {
@@ -23,6 +26,36 @@ html {
 
 }
 
+/* CONTENEDORES BASE */
+
+/* Contenedor que ocupa todo el contenido, se usa para el header, el footer y la imagen principal de la web (de momento) */
+.containerFull {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor específico para el contenido del main */
+.containerMain {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
+.coleccionTarjetas {
+    display: flex;
+    /* Por defecto, el display flex va a ser column */
+    flex-direction: column;
+}
+
+
+/* ELEMENTOS BASE */
+
 header, footer {
     /* Extender header y footer al 100% del ancho permitido */
     width: 100%;
@@ -45,7 +78,17 @@ p {
     /* Tamaño base */
     font-size: 1.4rem;
     /* Margen inferior */
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+img {
+    /* Imágenes responsivas */
+    max-width: 100%;
+}
+
+article header {
+    /* Margen inferior texto título */
+    margin-bottom: 3rem;
 }
 
 header h2 {
@@ -74,75 +117,6 @@ figcaption cite a {
     background-color: initial;
 }
 
-
-/* MEDIA QUERIES */
-
-/* Móvil */
-@media screen and (max-width: 599px) {
-    /* Contenedor que ocupa todo el contenido, se usa para el header, el footer y la imagen principal de la web (de momento) */
-    .containerFull {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
-    .coleccionTarjetas {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .containerMain {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-/* Tablet */
-@media screen and (min-width: 600px) and (max-width: 1199px) {
-    /* REVISAR */
-    .containerFull {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .containerMain {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-/* Ordenador */
-@media screen and (min-width: 1200px) {
-    /* REVISAR */
-    .containerFull {
-        width: 100%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .containerMain {
-        width: 100%;
-        max-width: 1140px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
 /* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML */
 
 /* Texto Nature Hub Un espacio para los defensores del medio ambiente */
@@ -157,7 +131,7 @@ figcaption cite a {
     top: 35rem;
 }
 
-/* Texto Naturae Hub*/
+/* Gestión texto imagen index */
 .textoImagenIndex h2 {
     /* Tamaño de la fuente de letra */
     font-size: 3rem;
@@ -191,7 +165,7 @@ figcaption cite a {
     /* Para ocupar todo el ancho */
     width: 100%;
     /* Espacio con el extremo derecho */
-    padding-right:3rem;
+    padding-right: 3rem;
     /* Alinear el texto a la derecha */
     text-align: right;
     /* Encajar el texto arriba */
@@ -202,7 +176,6 @@ figcaption cite a {
     /* Tipo de letra normal en vez de italica */
     font-style: normal;
 }
-
 
 /* ENLACES A NIVEL GENERAL */
 
@@ -325,6 +298,16 @@ body > header nav a:hover {
     text-decoration: none;
 }
 
+/* NAVEGACIÓN TARJETAS EN LA WEB */
+
+/* Titulares que se presentan como enlaces */
+h3 a:hover {
+    /* Estado :hover de los titulares que se preparan como enlaces */
+    color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
 
 /* NAVEGACION INTERNA tema-del-mes.html */
 
@@ -403,7 +386,6 @@ body > header nav a:hover {
     /* Quitar decoración enlaces tarjetas */
     text-decoration: none;
 }
-
 
 /* FORMULARIO */
 
@@ -554,21 +536,40 @@ abbr {
     border: 0.1rem solid rgb(255, 255, 255);
 }
 
-/* Titulares que se presentan como enlaces */
-h3 a:hover {
-    /* Estado :hover de los titulares que se preparan como enlaces */
-    color: rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
+
+/* MEDIA QUERIES */
+
+/* Primero aquellas que sean comunes a ambas resoluciones, tanto tablet como móvil */
+
+@media screen and (min-width: 600px) {
+    .coleccionTarjetas {
+        /* Se disponen los elementos en línea */
+        flex-direction: row;
+        /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
+        flex: 1 20rem;
+        /* Espacio entre los elementos */
+        gap: 4rem;
+        /* Dejar espacio entre los extremos */
+        justify-content: space-around;
+    }
+} 
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+
+    .citaPrincipal cite {
+        /* Tamaño texto cita principal */
+        font-size: 1.2rem;
+    }
+
+    input[type="text"], input[type="email"]  {
+        /* Se sobreescribe el ancho para escribir en los campos */ 
+        width: 50%;
+    }
 }
 
-img {
-    /* Imágenes responsivas */
-    max-width: 100%;
-}
+/* Ordenador */
+@media screen and (min-width: 1200px) {
 
 
-article header {
-    /* Margen inferior texto título */
-    margin-bottom: 3rem;
 }
