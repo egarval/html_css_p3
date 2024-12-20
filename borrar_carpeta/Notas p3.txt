@@ -10,6 +10,7 @@ Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de 
 Hacer que se vea el background del footer al ampliar la página
 Redefinición de width
 Redefinición de flex-direction
+Se pueden usar divs vacios a menos que declares una determinada media query
 
 
 tema-del-mes.html

@@ -28,11 +28,18 @@ html {
 
 /* CONTENEDORES BASE */
 
-/* Contenedor que ocupa todo el contenido, se usa para el header, el footer y la imagen principal de la web (de momento) */
+/* Contenedor que ocupa todo el contenido, se usa para La imagen principal de la web (de momento) */
 .containerFull {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Contenedor especifico para el header/footer */
+.containerHeaderFooter {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;   
 }
 
 /* Contenedor específico para el contenido del main */
@@ -50,6 +57,13 @@ html {
 .coleccionTarjetas {
     display: flex;
     /* Por defecto, el display flex va a ser column */
+    flex-direction: column;
+}
+
+/* Contenido principal del index */
+.contenidoIndex {
+   /* Colocamos los elementos disponibles con flex y una direccion en columna */ 
+    display: flex;
     flex-direction: column;
 }
 
@@ -98,10 +112,6 @@ header h2 {
     margin-bottom: 5rem;
 }
 
-section h3 {
-    /* Tamaño por defecto de las sections de la página */
-    font-size: 1.5rem;
-}
 
 figcaption cite {
     /* Fondo de los textos de crédito de las imágenes */
@@ -215,6 +225,15 @@ button {
     margin-bottom: 5rem;
     /* Para que el validador CSS no tenga adevertencias */
     color: inherit;
+}
+
+.enlaceBoton {
+    /* Posición absoluta para poder fijar el botón */
+    position: absolute;
+    /* Botón en el fondo */
+    bottom: 0rem;
+    /* Margen a la izquierda */
+    left: 1rem;
 }
 
 .enlaceBoton a, .enlaceBotonPaginacion a {
@@ -373,11 +392,17 @@ h3 a:hover {
     margin-top: 3rem;
     /* Márgenes internos de la tarjeta */
     padding-top: 2.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 6rem;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
+    /* Para poder redimensionar el enlace de botón como absolute */
+    position: relative;
 }
 
+.tarjeta h3 {
+    /* Tamaño por defecto de las tarjetas de la página */
+    font-size: 1.5rem;
+}
 
 .tarjeta p {
     /* Margen de la tarjeta con el texto de arriba */
@@ -388,6 +413,7 @@ h3 a:hover {
     /* Quitar decoración enlaces tarjetas */
     text-decoration: none;
 }
+
 
 /* FORMULARIO */
 
@@ -442,15 +468,17 @@ footer {
     color: rgb(255, 255, 255);
     /* Margen con las tarjetas*/
     margin-top: 8rem;
+    /* Margen con el logotipo */
+    padding-top: 3rem;
 }
 
-footer .containerFull {
+footer .containerHeaderFooter {
     /* Para alinear en el centro el texto del footer del contenedor que abarca todo el espacio */
     text-align: center;
 }
 
 /* Para la imagen que es hijo directo */
-footer .containerFull > img {
+footer .containerHeaderFooter > img {
     /* Margen de la imagen */
     margin: 3rem;
 }
@@ -493,12 +521,12 @@ footer a {
     list-style: none;
 }
 
-.enlacesAdicionalesFooter {
+.navFooter {
     /* Para que se vea un espacio respecto al final de la página */
     padding-bottom: 3rem;
 }
 
-.enlacesAdicionalesFooter li {
+.navFooter li {
     /* Márgenes entre los enlaces adicionales del footer */
     margin: 1rem;
     /* Tamaño de los enlaces */
@@ -546,21 +574,24 @@ abbr {
 
 /* Primero aquellas que sean comunes a ambas resoluciones, tanto tablet como móvil */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 649px) {
     .coleccionTarjetas {
         /* Se disponen los elementos en línea */
         flex-direction: row;
-        /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
-        flex: 1 20rem;
         /* Espacio entre los elementos */
         gap: 4rem;
         /* Dejar espacio entre los extremos */
         justify-content: space-around;
     }
+
+    .coleccionTarjetas .tarjeta {
+        /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
+         flex: 1 20rem;
+    }
 } 
 
 /* Tablet */
-@media screen and (min-width: 600px) and (max-width: 1199px) {
+@media screen and (min-width: 65px) and (max-width: 1199px) {
 
     .citaPrincipal cite {
         /* Tamaño texto cita principal */
@@ -576,5 +607,72 @@ abbr {
 /* Ordenador */
 @media screen and (min-width: 1200px) {
 
+    .containerMain {
+        /* Ancho maximo indicado en el enunciado */
+        max-width: 1140px;
+    }
 
+    /* CONTENEDORES HEADER Y FOOTER */
+
+    .containerHeaderFooter {
+        display: flex;
+        /* Se disponen los elementos en línea */
+        flex-direction: row;
+        /* Dejar espacio entre los extremos */
+        justify-content: space-between;
+        /* Margenes internos a justificar */
+        padding-left: 6rem;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        padding-right: 6rem;
+    }
+
+    .containerHeaderFooter ul {
+        /* Las listas ahora se disponnen en fila */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .containerHeaderFooter ul li {
+        /* Eliminamos los estilos de las listas en fila*/
+        list-style: none;
+    }
+
+    .navHeader li:first-child a::after {
+        /* Incluir el caracter barra larga como separador en la navegacion del header */
+        margin: 2rem;
+        content: "\007C";
+        font-size: 2rem;
+    }
+
+    .navBlog {
+        /* Se iguala el tamaño al del caracter para que quede alineado con el otro elemento de la lista */
+        font-size: 2rem;
+        /* Para dejar el mismo margen entre ambos lados de la barra */
+        margin-left: -0.5rem;
+    }
+
+    .logotipo {
+        /* Se reduce el tamaño de los logotipos */
+        width: 80%;
+        height: auto;
+    }
+
+    /* CONTENIDO TEXTO PRINCIPAL INDEX */
+    .contenidoIndex {
+        /* Se disponen los elementos en línea en el contenido principal del index*/
+        flex-direction: row;
+        /* Espacio entre las columnas */
+        gap: 10rem;
+    }
+
+    .contenidoIndex .natureHubExplicacion {
+        /* Lo que ocupa la seccion naturae Hub*/
+        flex: 0.7;  
+    }
+
+    .contenidoIndex aside {
+        /* Lo que ocupa el formulario */
+        flex: 0.5;  
+    }
 }
