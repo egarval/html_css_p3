@@ -8,6 +8,9 @@ Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de 
 ¿El <cite> tiene atributos?
 ¿Hay que incluir validaciones CSS de los inputs?
 Hacer que se vea el background del footer al ampliar la página
+Redefinición de width
+Redefinición de flex-direction
+
 
 tema-del-mes.html
 	¿Transformar en una tabla las diferentes secciones?
