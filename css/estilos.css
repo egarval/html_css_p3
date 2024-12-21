@@ -24,10 +24,11 @@ html {
 
 }
 
-/* CONTENEDORES BASE */
+/* CONTENEDORES BASE QUE DETERMINAN CUÁNTO OCUPA EL CONTENIDO */
 
-/* Contenedores que van a abarcar el 100% de todo el ancho de la web excluyendo padding */
-.containerHeader, .containerImgFull {
+
+/* Elementos que tienen en común todos los contendores de la web */
+.containerHeader, .containerImgFull, .containerMainSpace, .containerMainFull {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -35,46 +36,49 @@ html {
 
 /* Contenedores centrados en los contenidos, en función de la resolución se aplicará un max-width y un padding por defecto */
 .containerMainSpace, .containerMainFull {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 6rem;
     padding-bottom: 6rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-/* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
-.coleccionTarjetasIndex, .coleccionTarjetasBlog {
+
+/* CONTENEDORES QUE REQUIEREN UN DISPLAY FLEX PARA EL DISEÑO RESPONSIVO */ 
+
+
+/* Para las tarjetas que se muestran en la web y la separación de contenido en el index en dispositivos de resolución grande */ 
+.coleccionTarjetasIndex, .coleccionTarjetasBlog, .contenidoIndex, .navIconos {
     display: flex;
-    /* Por defecto, el display flex va a ser column */
+    /* Uso de un flex direction column */
     flex-direction: column;
 }
 
-
-/* Contenido principal del index */
-.contenidoIndex {
-   /* Colocamos los elementos disponibles con flex y una direccion en columna */ 
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* Contenedor enlaces paginación blog.html*/
-.enlacesPaginacion {
+.enlacesPaginacion, .navIconos {
     /* Se aplica un display flex centrando los contenidos y separándolos */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* Para colocar los elementos hijos en el centro respecto al resto del espacio */
+    justify-content: center; 
+}
+
+/* Contenedor enlaces paginación blog.html*/
+.enlacesPaginacion {
+    /* Separación entre los elementos */
     gap: 1rem;
     /* Separación con los elementos de arriba */
     margin-top: 6rem;
 }
 
-.enlacesPaginacion li {
+.navIconos {
+    /* Espacio entre los elementos hijos */
+    gap: 0.5rem;
+}
+
+.enlacesPaginacion li, .navIconos li {
     /* Eliminar los puntos de los enlaces de paginación en blog.html */
     list-style: none;
 }
+
 
 /* ELEMENTOS BASE */
 
@@ -121,179 +125,6 @@ header h2 {
     /* Margen inferior header h2*/
     margin-bottom: 5rem;
 }
-figcaption cite {
-    /* Fondo de los textos de crédito de las imágenes */
-    background-color: rgba(242, 242, 230, 0.7);
-    /* Evitar que el validador CSS tenga problemas */
-    color: inherit;
-    /* Margen interno cita*/
-    padding: 1rem;
-}
-
-figcaption cite a {
-    /* Se reinicia el color para que no se sobreescriba en la cita */
-    background-color: initial;
-    /* Para que el validador CSS no tenga adevertencias */
-    color: inherit;
-}
-
-/* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML */
-
-/* Texto Nature Hub Un espacio para los defensores del medio ambiente */
-.textoImagenIndex {
-    /* El DIV ocupa todo el ancho para que el texto se pueda centrar bien */
-    width: 100%;
-    /* Posicion absolute para que salga del flujo normal */
-    position: absolute;
-    /* Se alinea el texto en el centro*/
-    text-align: center;
-    /* Distancia con el extremo superior del navegador */
-    top: 35rem;
-}
-
-/* Gestión texto imagen index */
-.textoImagenIndex h2 {
-    /* Tamaño de la fuente de letra */
-    font-size: 3rem;
-    /* Margen con el texto de abajo */
-    margin-bottom: 3rem;
-}
-
-/* Un espacio para los defensores del medio ambiente */
-.textoImagenIndex h3 {
-    /* Paddings para centrar el texto */
-    padding-left:4rem;
-    padding-right:4rem;
-    /* Tamaño de fuente */
-    font-size: 2rem;
-}
-
-/* Imagen central de index.html */
-.imagenPrincipal {
-    /* Para que ocupe todo el ancho */
-    width: 100%;
-    /* Tamaño fijo de altura a mantener sin importar la resolucion*/
-    height: 50rem;
-    /* Para mantener la relacion de aspecto mientras se rellena toda caja */
-    object-fit: cover;
-}
-
-/* Cita imagen principal index.html */
-.citaPrincipal, .citaImagenTarjeta {
-    /* Posicion relativa para colocar la cita dentro de la imagen */
-    position: relative;
-    /* Para ocupar todo el ancho */
-    width: 100%;
-    /* Espacio con el extremo derecho */
-    padding-right: 3rem;
-    /* Alinear el texto a la derecha */
-    text-align: right;
-    /* Encajar el texto arriba */
-    top:-5rem;
-    /* Tipo de letra normal en vez de italica */
-    font-style: normal;
-}
-
-.citaPrincipal {
-    /* Espacio con el extremo derecho de la cita principal */
-    padding-right: 3rem;
-}
-
-.citaImagenTarjeta {
-    /* Espacio con el extremo derecho de la cita con imagen */
-    padding-right: 2rem; 
-}
-
-.citaPrincipal cite, .citaImagenTarjeta cite {
-    /* Tipo de letra normal en vez de italica */
-    font-style: normal;
-}
-
-
-
-
-/* ENLACES A NIVEL GENERAL */
-
-a {
-    /* Color de los enlaces */
-    color: rgb(0, 0, 0);   
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;    
-    /* Subrayado con puntos en un enlace */
-    text-decoration:underline;
-    text-decoration-style: dotted;
-}
-
-a:hover {
-    /* Mostrar enlace con borde de línea continua */
-    text-decoration-style: initial;
-}
-
-/* BOTON + ENLACES EN FORMA DE BOTON */
-
-button, .enlaceBoton a, .enlaceBotonPaginacion a {
-    /* Márgenes internos del botón */
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-button {
-    /* Borde del botón */
-    border: 0.1rem solid rgb(0, 0, 0);
-    /* Color de fondo transparente */
-    background-color: transparent;
-    /* Margen con el texto inferior */
-    margin-bottom: 5rem;
-    /* Para que el validador CSS no tenga adevertencias */
-    color: inherit;
-}
-
-.enlaceBoton {
-    /* Posición absoluta para poder fijar el botón */
-    position: absolute;
-    /* Botón en el fondo */
-    bottom: 0rem;
-    /* Margen a la izquierda */
-    left: 1rem;
-}
-
-.enlaceBoton a, .enlaceBotonPaginacion a {
-    /* Color de los bordes de los enlaces en forma de botón */
-    border: 0.1rem solid rgb(0, 0, 0); 
-    /* Quitar el subrayado*/
-    text-decoration: none;
-}
-
-.enlace a {
-    /* Fondo de color transparente*/
-    background-color: transparent;    
-    /* Para que el validador CSS no tenga adevertencias */
-    color: inherit;
-}
-
-.enlaceBotonPaginacion a {
-    /* Fondo blanco enlaces paginacion */
-    background-color: rgb(255, 255, 255);  
-    /* Para que el validador CSS no tenga adevertencias */
-    color: inherit;
-}
-
-.enlaceBoton a:hover, button:hover {
-    /* Cambio de color del borde en su estado hover */
-    border: 0.1rem solid rgb(64, 195, 130); 
-}
-
-.enlaceBotonPaginacion a:hover, .enlaceBotonPaginacion .paginaActual {
-    /* Quito el color de borde pese a que el documento diga que sea verde porque si no me da warning el validador CSS */
-    border: none; 
-    /* Enlace de página actual de los enlaces de paginación al final de la página blog.html + elementos seleccionados del menu de paginacion */
-    background-color: rgb(64, 195, 130);
-    /* Color de texto */
-     color: rgb(255, 255, 255);
-}
-
 
 /* MENU NAVEGACION PRINCIPAL */
 
@@ -332,17 +163,175 @@ h1 {
     padding-bottom: 4rem;
 }
 
-.containerHeader nav a, footer nav a {
-    /* Quitar el subrayado */
-    text-decoration: none;
-    /* Se aumenta el tamaño */
-    font-size: 1.5rem;
+/* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML */
+
+/* Imagen central de index.html */
+
+.imagenPrincipal {
+    /* Para que ocupe todo el ancho */
+    width: 100%;
+    /* Tamaño fijo de altura a mantener sin importar la resolucion*/
+    height: 50rem;
+    /* Para mantener la relacion de aspecto mientras se rellena toda caja */
+    object-fit: cover;
 }
 
-.containerHeader nav a:hover, footer nav a:hover {
-    /* Quitar el subrayado */
+/* Texto Nature Hub Un espacio para los defensores del medio ambiente */
+.textoImagenIndex {
+    /* El DIV ocupa todo el ancho para que el texto se pueda centrar bien */
+    width: 100%;
+    /* Posicion absolute para que salga del flujo normal */
+    position: absolute;
+    /* Se alinea el texto en el centro*/
+    text-align: center;
+    /* Distancia con el extremo superior del navegador */
+    top: 35rem;
+    /* Texto sobre la imagen de fondo de la página index.html */
+    color: rgb(255, 255, 255);
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
+/* Gestión texto imagen index */
+.textoImagenIndex h2 {
+    /* Tamaño de la fuente de letra */
+    font-size: 3rem;
+    /* Margen con el texto de abajo */
+    margin-bottom: 3rem;
+}
+
+/* Un espacio para los defensores del medio ambiente */
+.textoImagenIndex h3 {
+    /* Paddings para centrar el texto */
+    padding-left:4rem;
+    padding-right:4rem;
+    /* Tamaño de fuente */
+    font-size: 2rem;
+}
+
+/* GESTIÓN DE LAS CITAS */
+
+cite {
+    /* Fondo de los textos de crédito de las imágenes */
+    background-color: rgba(242, 242, 230, 0.7);
+    /* Evitar que el validador CSS tenga problemas */
+    color: inherit;
+    /* Margen interno cita*/
+    padding: 1rem;
+}
+
+cite a {
+    /* Se reinicia el color para que no se sobreescriba en la cita */
+    background-color: initial;
+    /* Para que el validador CSS no tenga adevertencias */
+    color: inherit;
+}
+
+/* Instrucciones CSS relativas a colocar las citas en las imágenes */
+.citaPrincipal, .citaImagenTarjeta {
+    /* Posicion relativa para colocar la cita dentro de la imagen */
+    position: relative;
+    /* Para ocupar todo el ancho */
+    width: 100%;
+    /* Alinear el texto a la derecha */
+    text-align: right;
+    /* Encajar el texto arriba */
+    top:-5rem;
+}
+
+.citaPrincipal {
+    /* Espacio con el extremo derecho de la cita principal */
+    padding-right: 3rem;
+}
+
+.citaImagenTarjeta {
+    /* Espacio con el extremo derecho de la cita con imagen */
+    padding-right: 2rem; 
+}
+
+.citaPrincipal cite, .citaImagenTarjeta cite {
+    /* Tipo de letra normal en vez de italica */
+    font-style: normal;
+}
+
+/* ENLACES A NIVEL GENERAL */
+
+a {
+    /* Color de los enlaces */
+    color: rgb(0, 0, 0);   
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;    
+    /* Subrayado con puntos en un enlace */
+    text-decoration:underline;
+    text-decoration-style: dotted;
+}
+
+a:hover {
+    /* Mostrar enlace con borde de línea continua */
+    text-decoration-style: initial;
+}
+
+/* BOTON + ENLACES EN FORMA DE BOTON + ENLACES DE LA PAGINACIÓN */
+
+button, .enlaceBoton a, .enlaceBotonPaginacion a {
+    /* Márgenes internos del botón */
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+button, .enlaceBoton a {
+    /* Fondo de color transparente*/
+    background-color: transparent;    
+    /* Para que el validador CSS no tenga adevertencias */
+    color: inherit;   
+}
+
+button {
+    /* Borde del botón */
+    border: 0.1rem solid rgb(0, 0, 0);
+    /* Margen con el texto inferior */
+    margin-bottom: 5rem;
+}
+
+.enlaceBoton {
+    /* Posición absoluta para poder fijar el botón */
+    position: absolute;
+    /* Botón en el fondo */
+    bottom: 0rem;
+    /* Margen a la izquierda */
+    left: 1rem;
+}
+
+.enlaceBoton a, .enlaceBotonPaginacion a {
+    /* Color de los bordes de los enlaces en forma de botón */
+    border: 0.1rem solid rgb(0, 0, 0); 
+    /* Quitar el subrayado*/
     text-decoration: none;
 }
+
+.enlaceBotonPaginacion a {
+    /* Fondo blanco enlaces paginacion */
+    background-color: rgb(255, 255, 255);  
+    /* Para que el validador CSS no tenga adevertencias */
+    color: inherit;
+}
+
+.enlaceBoton a:hover, button:hover {
+    /* Cambio de color del borde en su estado hover */
+    border: 0.1rem solid rgb(64, 195, 130); 
+}
+
+.enlaceBotonPaginacion a:hover, .enlaceBotonPaginacion .paginaActual {
+    /* Quito el color de borde pese a que el documento diga que sea verde porque si no me da warning el validador CSS */
+    border: none; 
+    /* Enlace de página actual de los enlaces de paginación al final de la página blog.html + elementos seleccionados del menu de paginacion */
+    background-color: rgb(64, 195, 130);
+    /* Color de texto */
+     color: rgb(255, 255, 255);
+}
+
 
 /* NAVEGACIÓN TARJETAS EN LA WEB */
 
@@ -403,7 +392,7 @@ h3 a:hover {
 /* GESTION DE LAS TARJETAS */
 
 .tarjeta, .tarjetaImg {
-    /* Fondo de las tarjetas index.html +  blog.html */
+    /* Fondo de las tarjetas */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
@@ -421,7 +410,6 @@ h3 a:hover {
     padding-right: 1.2rem; 
     
 }
-
 
 .tarjeta h3, .tarjetaImg h3  {
     /* Tamaño por defecto de las tarjetas de la página */
@@ -498,9 +486,6 @@ footer {
     margin-top: 8rem;
     /* Margen con el logotipo */
     padding-top: 3rem;
-}
-
-footer {
     /* Para alinear en el centro el texto del footer del contenedor que abarca todo el espacio */
     text-align: center;
 }
@@ -511,35 +496,16 @@ footer > img {
     margin: 3rem;
 }
 
-footer p {
-    /* Color de los textos del footer */
+footer p, footer a {
+    /* Color de los textos del footer y enlaces */
     color: rgb(255, 255, 255);
     /* Para que el validador CSS no tenga adevertencias */
     background-color: inherit; 
 }
 
-footer a {
-    /* Color de los enlaces del footer */
-    color: rgb(255, 255, 255);   
+footer a { 
     /* Sin subrayado */
     text-decoration: none;
-    /* Para que el validador CSS no tenga adevertencias */
-    background-color: inherit;
-
-}
-
-.navIconos {
-    /* Display flex para colocar los elementos hijos en línea */
-    display: flex;
-    /* Para colocar los elementos hijos en el centro respecto al resto del espacio */
-    justify-content: center; 
-    /* Espacio entre los elementos hijos */
-    gap: 0.5rem;
-}
-
-.navIconos li {
-    /* Quitar listas de estilo */
-    list-style: none;
 }
 
 .navFooter {
@@ -563,35 +529,17 @@ footer ul {
     list-style: none;
 }
 
-/* OTROS ELEMENTOS */
-
-/* Texto imagen fondo index.html */
-.textoImagenIndex {
-    /* Texto sobre la imagen de fondo de la página index.html */
-    color: rgb(255, 255, 255);
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
+/* COMUNES AL HEADER Y AL FOOTER */
+.containerHeader nav a, footer nav a {
+    /* Quitar el subrayado */
+    text-decoration: none;
+    /* Se aumenta el tamaño */
+    font-size: 1.5rem;
 }
 
-/* Cursor abreviaturas */
-abbr {
-    /* Cambio de la forma del cursor en las abreviaturas */
-    cursor: help;
-}
-
-
-/* Texto destacado enero 2025 */
-.marcarTexto {
-    /* Texto destacado sobre verde en la página tema-del-mes.html */
-    color: rgb(255, 255, 255);
-    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
-    background-color: rgb(64, 195, 130); ;
-}
-
-/* Marco blanco imagenes tema-del-mes */
-.marcoBlanco {
-    /* Marcos de las imágenes en la página tema-del-mes.html */
-    border: 0.1rem solid rgb(255, 255, 255);
+.containerHeader nav a:hover, footer nav a:hover {
+    /* Quitar el subrayado */
+    text-decoration: none;
 }
 
 /* Estado hover enlaces header y footer */
@@ -603,7 +551,23 @@ abbr {
     background-color: inherit;
 }
 
+/* OTROS ELEMENTOS */
 
+/* Cursor abreviaturas */
+abbr {
+    /* Cambio de la forma del cursor en las abreviaturas */
+    cursor: help;
+}
+
+/* Texto destacado enero 2025 */
+.marcarTexto {
+    /* Texto destacado sobre verde en la página tema-del-mes.html */
+    color: rgb(255, 255, 255);
+    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
+    background-color: rgb(64, 195, 130); ;
+}
+
+/* Tamaño del título de las secciones principales */
 .tituloSeccion {
     margin-top: 8rem;
     text-align: center;
@@ -611,12 +575,13 @@ abbr {
 }
 
 
-
 /* MEDIA QUERIES */
 
 /* Primero aquellas que sean comunes a ambas resoluciones, tanto tablet como móvil */
 
 @media screen and (min-width: 649px) {
+
+    /* GESTIÓN DE LAS TARJETAS EN EL INDEX */
     .coleccionTarjetasIndex {
         /* Se disponen los elementos en línea */
         flex-direction: row;
@@ -629,6 +594,14 @@ abbr {
     .coleccionTarjetasIndex .tarjeta {
         /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
          flex: 1 20rem;
+    }
+
+    /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
+    .coleccionTarjetasBlog {
+        /* Se disponen los elementos en línea */
+        flex-direction: row;
+        /* Para que el contenido de los elementos no salga del contenedor */
+        flex-wrap: wrap;
     }
 } 
 
@@ -645,13 +618,8 @@ abbr {
         width: 50%;
     }
 
-    /* GESTIÓN DE LAS TARJETAS CON IMAGEN */
-
+    /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
     .coleccionTarjetasBlog {
-        /* Se disponen los elementos en línea */
-        flex-direction: row;
-        /* Para que el contenido de los elementos no salga del contenedor */
-        flex-wrap: wrap;
         /* Espacio entre los elementos */
         gap: 5rem;
     }
@@ -665,6 +633,8 @@ abbr {
 /* Ordenador */
 @media screen and (min-width: 1200px) {
 
+    /* GESTIÓN DE LOS CONTENEDORES PARA EL CONTENIDO PRINCIPAL */
+    
     /* En dispositivos grandes se reduce el ancho del contenido de algunas páginas */
     .containerMainSpace {
         max-width: 1140px;
@@ -686,9 +656,18 @@ abbr {
         justify-content: space-between;
         /* Margenes internos a justificar */
         padding-left: 6rem;
-        padding-top: 2rem;
         padding-bottom: 1rem;
         padding-right: 6rem;
+    }
+
+    .containerHeader {
+        /* Margen interno superior del header en dispositivos grandes */
+        padding-top: 2rem;       
+    }
+
+    footer {
+        /* Margen interno superior del footer en dispositivos grandes */ 
+        padding-top: 5rem;      
     }
 
     .containerHeader ul, footer ul {
@@ -744,7 +723,8 @@ abbr {
         font-size: 2rem;
     }
 
-    /* CONTENIDO TEXTO PRINCIPAL INDEX */
+    /* GESTIÓN CONTENEDOR TEXTO INDEX */
+
     .contenidoIndex {
         /* Se disponen los elementos en línea en el contenido principal del index*/
         flex-direction: row;
@@ -762,13 +742,8 @@ abbr {
         flex: 0.5;  
     }
 
-    /* GESTIÓN DE LAS TARJETAS CON IMAGEN */
-
+    /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
     .coleccionTarjetasBlog {
-        /* Se disponen los elementos en línea */
-        flex-direction: row;
-        /* Para que el contenido de los elementos no salga del contenedor */
-        flex-wrap: wrap;
         /* Espacio entre los elementos */
         gap: 10rem;
     }

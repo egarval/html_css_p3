@@ -29,6 +29,7 @@ Arreglo color barra verde vertical
 	Preguntar si es necesario el uso de <picture>, pues no hay imágenes alternativas.
 	Hay que confirmar si puedes hacer la práctica únicamente con flexbox
 	Warnings validador CSS por las media queries
+	PROBLEMAS AL AMPLIAR LA IMAGEN, SE DESCUADRAN ELEMENTOS 
 	
 Respecto a la fuente de letra:
 	-> ¿Igual no hace falta? Se ve bien añadiendo en el body la fuente de letra
