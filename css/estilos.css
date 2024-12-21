@@ -26,22 +26,15 @@ html {
 
 /* CONTENEDORES BASE */
 
-/* Contenedor que ocupa todo el contenido, se usa para La imagen principal de la web (de momento) */
-.containerFull {
+/* Contenedores que van a abarcar el 100% de todo el ancho de la web excluyendo padding */
+.containerHeader, .containerImgFull {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Contenedor especifico para el header/footer */
-.containerHeaderFooter {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;   
-}
-
-/* Contenedor específico para el contenido del main */
-.containerMain {
+/* Contenedores centrados en los contenidos, en función de la resolución se aplicará un max-width y un padding por defecto */
+.containerMainSpace, .containerMainFull {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -315,17 +308,17 @@ h1 {
     text-align: center;
 }
 
-body > header  {
+.containerHeader {
     /* Fondo del header de las páginas */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
-    /* Quitar margen de separacion con la imagen de abajo */
+    /*  Margen de separación con los contenidos de abajo */
     margin-bottom: -1rem;
 }
 
 /* Elementos de la lista de navegación*/
-body > header nav li {
+.containerHeader nav li {
     /* Quitar el punto de la lista */
     list-style: none;
     /* Alinear el texto */
@@ -339,14 +332,14 @@ body > header nav li {
     padding-bottom: 4rem;
 }
 
-body > header nav a {
+.containerHeader nav a, footer nav a {
     /* Quitar el subrayado */
     text-decoration: none;
     /* Se aumenta el tamaño */
     font-size: 1.5rem;
 }
 
-body > header nav a:hover {
+.containerHeader nav a:hover, footer nav a:hover {
     /* Quitar el subrayado */
     text-decoration: none;
 }
@@ -507,13 +500,13 @@ footer {
     padding-top: 3rem;
 }
 
-footer .containerHeaderFooter {
+footer {
     /* Para alinear en el centro el texto del footer del contenedor que abarca todo el espacio */
     text-align: center;
 }
 
 /* Para la imagen que es hijo directo */
-footer .containerHeaderFooter > img {
+footer > img {
     /* Margen de la imagen */
     margin: 3rem;
 }
@@ -672,14 +665,20 @@ abbr {
 /* Ordenador */
 @media screen and (min-width: 1200px) {
 
-    .containerMain {
-        /* Ancho maximo indicado en el enunciado */
+    /* En dispositivos grandes se reduce el ancho del contenido de algunas páginas */
+    .containerMainSpace {
         max-width: 1140px;
+    }
+
+    /* En dispositivos grandes mantenemos el ancho del contenido de algunas páginas metiendo padding para que se adapte al mockup */
+    .containerMainFull {
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 
     /* CONTENEDORES HEADER Y FOOTER */
 
-    .containerHeaderFooter {
+    .containerHeader, footer {
         display: flex;
         /* Se disponen los elementos en línea */
         flex-direction: row;
@@ -692,13 +691,13 @@ abbr {
         padding-right: 6rem;
     }
 
-    .containerHeaderFooter ul {
+    .containerHeader ul, footer ul {
         /* Las listas ahora se disponnen en fila */
         display: flex;
         flex-direction: row;
     }
 
-    .containerHeaderFooter ul li {
+    .containerHeader ul li, footer ul li {
         /* Eliminamos los estilos de las listas en fila*/
         list-style: none;
     }
