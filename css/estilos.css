@@ -317,10 +317,6 @@ body > header nav a {
 }
 
 body > header nav a:hover {
-    /* Estado :hover de los enlaces del menú de navegación principal */
-    color: rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
     /* Quitar el subrayado */
     text-decoration: none;
 }
@@ -483,13 +479,6 @@ footer .containerHeaderFooter > img {
     margin: 3rem;
 }
 
-footer a:hover {
-    /* Estado :hover de los enlaces dentro del footer de las páginas */
-    color: rgb(64, 195, 130); 
-    /* Evitar que el validador CSS tenga problemas */
-    background-color: inherit;
-}
-
 footer p {
     /* Color de los textos del footer */
     color: rgb(255, 255, 255);
@@ -573,6 +562,16 @@ abbr {
     border: 0.1rem solid rgb(255, 255, 255);
 }
 
+/* Estado hover enlaces header y footer */
+.resaltar:hover {
+    /* Color del estado hover de los enlaces del header y el footer */
+    /* Se usa un span porque si no te marca también la barra de color */
+    color: rgb(64, 195, 130); 
+    /* Evitar que el validador CSS tenga problemas */
+    background-color: inherit;
+}
+
+
 
 /* MEDIA QUERIES */
 
@@ -647,26 +646,6 @@ abbr {
         padding-top: 2rem;
     }
 
-    .navHeader li:first-child a::after {
-        /* Incluir el caracter barra larga como separador en la navegacion del header */
-        content: "\007C";
-        /* Se aumenta el tamaño para que se vea mejor */
-        font-size: 2rem;
-        /* Margen de separacion izquierdo */
-        margin-left: 1.5rem;
-    }
-
-    .navBlog {
-        /* Margen izquierdo del elemento blog respecto a la barra */
-        margin-left: 1rem;
-    }
-
-    .navBlog::after {
-        /* Creamos un content vacio con tamaño igual a los otros elementos de la lista para que quede el texto en la misma horizontal */
-        content:"";
-        font-size: 2rem;
-    }
-
     .containerHFLeft img {
         /* Margen superior negativo para alinear los logotipos del header y el footer */
         margin-top: -2rem;
@@ -686,16 +665,20 @@ abbr {
         margin-right: 1rem;
     } 
 
-
     .llevaBarra::after {
-        /* Incluir el caracter barra larga como separador en la navegacion del footer */
+        /* Incluir el caracter barra larga como separador en la navegacion del header y footer */
         margin-left: 2rem;
         content: "\007C";
-        font-size: 2rem;   
+        font-size: 2rem;  
     }
 
-    .navFooter li:nth-child(3)::after {
-        /* Para que no quede desencajado el elemento final de la lista respecto del resto al incluir la barra separadora en el footer */
+    .navBlog {
+        /* Margen izquierdo del elemento blog respecto a la barra en el header */
+        margin-left: 2rem;
+    }
+
+    .navBlog::after, .navFooter li:nth-child(3)::after {
+        /* Creamos un content vacio con tamaño igual a los otros elementos de la lista para que quede el texto en la misma horizontal en el header/footer */
         content:"";
         font-size: 2rem;
     }
