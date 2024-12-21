@@ -52,11 +52,12 @@ html {
 }
 
 /* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
-.coleccionTarjetas {
+.coleccionTarjetas, .coleccionTarjetasBlog {
     display: flex;
     /* Por defecto, el display flex va a ser column */
     flex-direction: column;
 }
+
 
 /* Contenido principal del index */
 .contenidoIndex {
@@ -65,6 +66,22 @@ html {
     flex-direction: column;
 }
 
+
+/* Contenedor enlaces paginación blog.html*/
+.enlacesPaginacion {
+    /* Se aplica un display flex centrando los contenidos y separándolos */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    /* Separación con los elementos de arriba */
+    margin-top: 6rem;
+}
+
+.enlacesPaginacion li {
+    /* Eliminar los puntos de los enlaces de paginación en blog.html */
+    list-style: none;
+}
 
 /* ELEMENTOS BASE */
 
@@ -111,8 +128,6 @@ header h2 {
     /* Margen inferior header h2*/
     margin-bottom: 5rem;
 }
-
-
 figcaption cite {
     /* Fondo de los textos de crédito de las imágenes */
     background-color: rgba(242, 242, 230, 0.7);
@@ -171,7 +186,7 @@ figcaption cite a {
 }
 
 /* Cita imagen principal index.html */
-.citaPrincipal {
+.citaPrincipal, .citaImagenTarjeta {
     /* Posicion relativa para colocar la cita dentro de la imagen */
     position: relative;
     /* Para ocupar todo el ancho */
@@ -182,12 +197,27 @@ figcaption cite a {
     text-align: right;
     /* Encajar el texto arriba */
     top:-5rem;
-}
-
-.citaPrincipal cite {
     /* Tipo de letra normal en vez de italica */
     font-style: normal;
 }
+
+.citaPrincipal {
+    /* Espacio con el extremo derecho de la cita principal */
+    padding-right: 3rem;
+}
+
+.citaImagenTarjeta {
+    /* Espacio con el extremo derecho de la cita con imagen */
+    padding-right: 2rem; 
+}
+
+.citaPrincipal cite, .citaImagenTarjeta cite {
+    /* Tipo de letra normal en vez de italica */
+    font-style: normal;
+}
+
+
+
 
 /* ENLACES A NIVEL GENERAL */
 
@@ -379,37 +409,46 @@ h3 a:hover {
 
 /* GESTION DE LAS TARJETAS */
 
-.tarjeta {
+.tarjeta, .tarjetaImg {
     /* Fondo de las tarjetas index.html +  blog.html */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
     /* Margen superior externo de la tarjeta*/
     margin-top: 3rem;
-    /* Márgenes internos de la tarjeta */
-    padding-top: 2.5rem;
-    padding-bottom: 6rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
     /* Para poder redimensionar el enlace de botón como absolute */
     position: relative;
 }
 
-.tarjeta h3 {
+.tarjeta, .tarjetaImg .textoTarjetaImg {
+    /* Márgenes internos de los textos de las tarjetas */
+    padding-top: 2.5rem;
+    padding-bottom: 6rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem; 
+    
+}
+
+
+.tarjeta h3, .tarjetaImg h3  {
     /* Tamaño por defecto de las tarjetas de la página */
     font-size: 1.5rem;
 }
 
-.tarjeta p {
+.tarjeta p, .tarjetaImg p  {
     /* Margen de la tarjeta con el texto de arriba */
     margin-top: 2rem;
 }
 
-.tarjeta a {
-    /* Quitar decoración enlaces tarjetas */
+.tarjeta h3 a, .textoTarjetaImg a {
+    /* Quitar decoración enlaces tarjetas sin imagen */
     text-decoration: none;
 }
 
+.textoTarjetaImg aside p {
+    /* Reducir el tamaño del autor*/
+    font-size: 1.2rem;
+}
 
 /* FORMULARIO */
 
@@ -572,6 +611,13 @@ abbr {
 }
 
 
+.tituloSeccion {
+    margin-top: 8rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+
 
 /* MEDIA QUERIES */
 
@@ -594,7 +640,7 @@ abbr {
 } 
 
 /* Tablet */
-@media screen and (min-width: 65px) and (max-width: 1199px) {
+@media screen and (min-width: 650px) and (max-width: 1199px) {
 
     .citaPrincipal cite {
         /* Tamaño texto cita principal */
@@ -604,6 +650,22 @@ abbr {
     input[type="text"], input[type="email"]  {
         /* Se sobreescribe el ancho para escribir en los campos */ 
         width: 50%;
+    }
+
+    /* GESTIÓN DE LAS TARJETAS CON IMAGEN */
+
+    .coleccionTarjetasBlog {
+        /* Se disponen los elementos en línea */
+        flex-direction: row;
+        /* Para que el contenido de los elementos no salga del contenedor */
+        flex-wrap: wrap;
+        /* Espacio entre los elementos */
+        gap: 5rem;
+    }
+
+    .coleccionTarjetasBlog .tarjetaImg {
+        /* Especificamos el tamaño mínimo de las tarjetas */
+        flex: 1 30rem;
     }
 }
 
@@ -699,5 +761,21 @@ abbr {
     .contenidoIndex aside {
         /* Lo que ocupa el formulario */
         flex: 0.5;  
+    }
+
+    /* GESTIÓN DE LAS TARJETAS CON IMAGEN */
+
+    .coleccionTarjetasBlog {
+        /* Se disponen los elementos en línea */
+        flex-direction: row;
+        /* Para que el contenido de los elementos no salga del contenedor */
+        flex-wrap: wrap;
+        /* Espacio entre los elementos */
+        gap: 10rem;
+    }
+    
+    .coleccionTarjetasBlog .tarjetaImg {
+        /* Especificamos el tamaño mínimo de las tarjetas */
+        flex: 1 50rem;
     }
 }

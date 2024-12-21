@@ -18,10 +18,11 @@
         content="Página Blog para el trabajo PEC 3 de la asignatura de HTML y CSS; aparece diferentes artículos a los que se tiene acceso">
 
     <!-- Fuentes de letra online-->
-	<!-- Los dos primeros links la carga de la fuente de letra -->
+    <!-- Los dos primeros links la carga de la fuente de letra -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <!-- Icono personalizado -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -38,230 +39,335 @@
 
     <header>
 
-        <!-- Logotipo -->
-        <h1>
-            <a href="index.html" title="Página Naturae Hub index para el trabajo PEC 3 ubidada dentro del header">
-                <img src="img/logotip.svg" alt="Logotipo de la página web naturaeHub para el header">
-            </a>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="tema-del-mes.html" title="Página TEMA DEL MES para el trabajo PEC 3">TEMA DEL MES</a></li>
-                <li class="navBlog"><a href="blog.html" title="Página BLOG para el trabajo PEC 3">BLOG</a></li>
-            </ul>
-        </nav>
+        <div class="containerHeaderFooter">
+
+            <div class="containerHFLeft">
+                <h1>
+                    <a href="index.html"
+                        title="Página Naturae Hub index para el trabajo PEC 3 ubidada dentro del header">
+                        <img src="img/logotip.svg" alt="Logotipo de la página web naturaeHub para el header">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="containerHFRight">
+                <nav class="navHeader">
+                    <ul>
+                        <li><a class="llevaBarra" href="tema-del-mes.html"
+                                title="Página TEMA DEL MES para el trabajo PEC 3"><span class="resaltar">TEMA DEL
+                                    MES</span></a>
+                        </li>
+                        <li class="navBlog"><a href="blog.html" title="Página BLOG para el trabajo PEC 3"><span
+                                    class="resaltar">BLOG</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
 
     </header>
 
     <main>
 
-        <article>
-            <header>
-                <h2>El blog de Naturae Hub</h2>
-            </header>
+        <div class="containerFull">
 
-            <section>
+            <article>
+                <header>
+                    <div class="containerFull">
+                        <h2 class="tituloSeccion">El blog de Naturae Hub</h2>
+                    </div>
+                </header>
 
-                <figure>
-                    <img class="tarjeta" src="img/blog-fast-fashion.jpg" alt="Perchas como portada del apartado">
-                    <figcaption>
-                        <cite>Imagen de 
-                            <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=linkattribution&utm_medium=referral&utm_campaign=image&utm_content=1834650" title="Perfil en Pixabay de Pexels">Pexels</a> 
-                            en 
-                            <a href="https://pixabay.com/es//?utm_source=linkattribution&utm_medium=referral&utm_campaign=image&utm_content=1834650" title="Web central en Pixabay">Pixabay</a>
-                        </cite>
-                    </figcaption>
-                </figure>
+                <div class="coleccionTarjetasBlog">
 
-                <h3><a href="post.html" title="Acceso a la sección de post dentro de la web">El impacto de la fast fashion en el planeta</a></h3>
 
-                <p>
-                    La autora del artículo analiza cómo la industria de la moda contribuye al cambio
-                    climático y qué podemos hacer para reducir el impacto de la <em>fast fashion</em> en el
-                    planeta.
-                </p>
+                    <section class="tarjetaImg">
+
+                        <figure>
+                            <img src="img/blog-fast-fashion.jpg" alt="Perchas como portada del apartado">
+                            <figcaption class="citaImagenTarjeta">
+                                <cite>Imagen de
+                                    <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=linkattribution&utm_medium=referral&utm_campaign=image&utm_content=1834650"
+                                        title="Perfil en Pixabay de Pexels">Pexels</a>
+                                    en
+                                    <a href="https://pixabay.com/es//?utm_source=linkattribution&utm_medium=referral&utm_campaign=image&utm_content=1834650"
+                                        title="Web central en Pixabay">Pixabay</a>
+                                </cite>
+                            </figcaption>
+                        </figure>
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href="post.html" title="Acceso a la sección de post dentro de la web">El impacto de
+                                    la
+                                    fast
+                                    fashion en el planeta</a></h3>
+
+                            <p>
+                                La autora del artículo analiza cómo la industria de la moda contribuye al cambio
+                                climático y qué podemos hacer para reducir el impacto de la <em>fast fashion</em> en el
+                                planeta.
+                            </p>
+
+                            <aside>
+                                <p>Por Lourdes Gómez — 31 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href=""
+                                        title="Información adicional sobre la fast fashion">Leer
+                                        más</a></p>
+                            </aside>
+                        </div>
+
+                    </section>
+
+                    <section class="tarjetaImg">
+
+                        <figure>
+                            <img src="img/blog-oso.jpg" alt="Osos como portada del apartado">
+                            <figcaption class="citaImagenTarjeta">
+                                <cite>Foto de
+                                    <a href="https://unsplash.com/@roaming_angel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Perfil en Uspash de Angel Luciano">Angel Luciano</a>
+                                    en
+                                    <a href="https://unsplash.com/photos/brown-grizzly-bear-crawling-in-thewoods-kNeWMuetKrY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Imagen de un oso en Unsplash">Unsplash</a>
+                                </cite>
+                            </figcaption>
+                        </figure>
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href="" title="Acceso a la sección de rewilding dentro de la web">Rewilding: cómo la
+                                    naturaleza puede recuperarse</a></h3>
+
+                            <p>
+                                <em>Rewilding</em> es devolver a la naturaleza aquello que no debía haberle sido
+                                arrebatado. El autor de este artículo explica qué es y cómo iniciativas en diferentes
+                                partes del mundo están ayudando a restaurar ecosistemas dañados.
+                            </p>
+
+                            <aside>
+                                <p>Por Toni Escapa — 30 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href="" title="Información adicional sobre el rewilding">Leer
+                                        más</a>
+                                </p>
+                            </aside>
+
+                        </div>
+
+                    </section>
+
+                    <section class="tarjetaImg">
+
+                        <figure>
+                            <img src="img/blog-bambu.jpg" alt="Bambú como portada del apartado">
+                            <figcaption class="citaImagenTarjeta">
+                                <cite>Foto de
+                                    <a href="https://unsplash.com/@marcelac61?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Perfil en Uspash de Marcela Castilho">Marcelo Castilho</a>
+                                    en
+                                    <a href="https://unsplash.com/photos/a-group-of-tall-bamboo-trees-in-a-forest58V7w40BE6g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Imagen de bambú en Unsplash">Unsplash</a>
+                                </cite>
+                            </figcaption>
+                        </figure>
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href=""
+                                    title="Acceso a la sección de materiales renovables dentro de la web">Materiales
+                                    renovables para un futuro sostenible</a></h3>
+
+                            <p>
+                                Bambú, micelio, bioplásticos, algas, papel de piedra... son alternativas ecológicas
+                                a materiales tradicionales que se están usando en proyectos innovadores que
+                                están cambiando industrias como la construcción y la moda.
+                            </p>
+
+                            <aside>
+                                <p>Por Sara Rodon — 28 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href=""
+                                        title="Información adicional sobre los materiales renovables">Leer más</a></p>
+                            </aside>
+
+                        </div>
+
+                    </section>
+
+                    <section class="tarjetaImg">
+
+                        <img src="img/blog-ods.png" alt="El desarrollo sostenible como portada del apartado">
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href=""
+                                    title="Explicación de cómo los objetivos de desarrollo sostenibles no van por buen camino">Los
+                                    Objetivos de Desarrollo Sostenible no van por buen camino</a></h3>
+
+                            <p>
+                                En el año 2015 la <abbr title="Organización de las Naciones Unidas">ONU</abbr> se
+                                planteó
+                                para
+                                2030 17 objetivos "para transformar el
+                                mundo". A seis años de la fecha de plazo, el progreso actual de los <abbr
+                                    title="Objetivos de Desarrollo Sostenible">ODS</abbr> está por
+                                debajo de lo necesario. Sólo el 17% de las metas van por buen camino.
+                            </p>
+
+                            <aside>
+                                <p>Por Elena Navarro — 20 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href=""
+                                        title="Información adicional sobre los objetivos de desarrollo sostenible">Leer
+                                        más</a>
+                                </p>
+                            </aside>
+
+                        </div>
+
+                    </section>
+
+                    <section class="tarjetaImg">
+
+                        <figure>
+                            <img src="img/blog-huerto.jpg" alt="Un huerto como portada del apartado">
+                            <figcaption class="citaImagenTarjeta">
+                                <cite>Foto de
+                                    <a href="https://unsplash.com/@danielcgold?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Perfil en Uspash de Don Gold">Dan Gold</a>
+                                    en
+                                    <a href="https://unsplash.com/photos/tomatoes-hanging-on-tomato-plant4LiUIY2mI8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Imagen de una huerta en Unsplash">Unsplash</a>
+                                </cite>
+                            </figcaption>
+                        </figure>
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href="" title="Explicación de cómo cultivar tu propio huerto">Cultiva tu propio
+                                    huerto en
+                                    casa</a></h3>
+
+                            <p>
+                                En esta guía para principiantes se desarrolla el concepto de huerto urbano. Es un
+                                artículo práctico en el que se explica qué plantas son ideales en función del
+                                espacio disponible. El artículo concluye con un listado de los beneficios para el
+                                medio ambiente y también para la salud mental.
+                            </p>
+
+                            <aside>
+                                <p>Por Cecília Val — 15 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href=""
+                                        title="Información adicional sobre cómo cultivar tu propio huerto">Leer más</a>
+                                </p>
+                            </aside>
+
+                        </div>
+
+                    </section>
+
+                    <section class="tarjetaImg">
+
+                        <figure>
+                            <img src="img/blog-caminar.jpg" alt="La naturaleza portada del apartado">
+                            <figcaption class="citaImagenTarjeta">
+                                <cite>Foto de
+                                    <a href="https://unsplash.com/@rthiemann?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Perfil en Uspash de Robert Thiemann">Robert Thiemann</a>
+                                    en
+                                    <a href="https://unsplash.com/photos/2-person-walking-on-road-betweengreen-trees-during-daytime3bYUmYV397E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                                        title="Imagen de la naturaleza en Unsplash">Unsplash</a>
+                                </cite>
+                            </figcaption>
+                        </figure>
+
+                        <div class="textoTarjetaImg">
+
+                            <h3><a href="" title="Explicación de cómo conectar con la naturaleza paseando">Conectar con
+                                    la
+                                    naturaleza paseando</a></h3>
+
+                            <p>
+                                El tiempo que pasamos al aire libre es proporcional al bienestar mental y físico del
+                                que gozamos. Los baños de bosque japoneses inspirados en las tradiciones
+                                sintoístas y budistas demuestran que la comunicación con la naturaleza reduce
+                                significativamente los niveles de hormonas del estrés.
+                            </p>
+
+                            <aside>
+                                <p>Por Ana Torres — 10 de diciembre de 2024</p>
+                                <p class="enlaceBoton"><a href=""
+                                        title="Información adicional sobre cómo conectar con la naturaleza paseando">Leer
+                                        más</a></p>
+                            </aside>
+                        </div>
+                    </section>
+
+                </div>
 
                 <aside>
-                    <p>Por Lourdes Gómez — 31 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre la fast fashion">Leer más</a></p>
+                    <ul class="enlacesPaginacion">
+                        <li class="enlaceBotonPaginacion"><a class="paginaActual" href=""
+                                title="Primera sección de información en la web">1</a></li>
+                        <li class="enlaceBotonPaginacion"><a href=""
+                                title="Segunda sección de información en la web">2</a>
+                        </li>
+                        <li class="enlaceBotonPaginacion"><a href=""
+                                title="Tercera sección de información en la web">3</a>
+                        </li>
+                        <li class="enlaceBotonPaginacion"><a href=""
+                                title="Más información adicional en la web sobre diferentes secciones">...</a></li>
+                    </ul>
                 </aside>
-
-            </section>
-
-            <section>
-
-                <figure>
-                    <img class="tarjeta" src="img/blog-oso.jpg" alt="Osos como portada del apartado">
-                    <figcaption>
-                        <cite>Foto de
-                            <a href="https://unsplash.com/@roaming_angel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Perfil en Uspash de Angel Luciano">Angel Luciano</a> 
-                            en 
-                            <a href="https://unsplash.com/photos/brown-grizzly-bear-crawling-in-thewoods-kNeWMuetKrY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Imagen de un oso en Unsplash">Unsplash</a>
-                        </cite>
-                    </figcaption>
-                </figure>
-
-                <h3><a href="" title="Acceso a la sección de rewilding dentro de la web">Rewilding: cómo la naturaleza puede recuperarse</a></h3>
-
-                <p>
-                    <em>Rewilding</em> es devolver a la naturaleza aquello que no debía haberle sido
-                    arrebatado. El autor de este artículo explica qué es y cómo iniciativas en diferentes
-                    partes del mundo están ayudando a restaurar ecosistemas dañados.
-                </p>
-
-                <aside>
-                    <p>Por Toni Escapa — 30 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre el rewilding">Leer más</a></p>
-                </aside>
-
-            </section>
-
-            <section>
-
-                <figure>
-                    <img class="tarjeta" src="img/blog-bambu.jpg" alt="Bambú como portada del apartado">
-                    <figcaption>
-                        <cite>Foto de
-                            <a href="https://unsplash.com/@marcelac61?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Perfil en Uspash de Marcela Castilho">Marcelo Castilho</a> 
-                            en 
-                            <a href="https://unsplash.com/photos/a-group-of-tall-bamboo-trees-in-a-forest58V7w40BE6g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Imagen de bambú en Unsplash">Unsplash</a>
-                        </cite>
-                    </figcaption>
-                </figure>
-
-                <h3><a href="" title="Acceso a la sección de materiales renovables dentro de la web">Materiales renovables para un futuro sostenible</a></h3>
-
-                <p>
-                    Bambú, micelio, bioplásticos, algas, papel de piedra... son alternativas ecológicas
-                    a materiales tradicionales que se están usando en proyectos innovadores que
-                    están cambiando industrias como la construcción y la moda.                    
-                </p>
-
-                <aside>
-                    <p>Por Sara Rodon — 28 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre los materiales renovables">Leer más</a></p>
-                </aside>
-
-            </section>
-
-            <section>
-                
-                <!-- Esta imagen no tiene cite -->
-                <img class="tarjeta" src="img/blog-ods.jpg" alt="El desarrollo sostenible como portada del apartado">
-      
-                <h3><a href="" title="Explicación de cómo los objetivos de desarrollo sostenibles no van por buen camino">Los Objetivos de Desarrollo Sostenible no van por buen camino</a></h3>
-
-                <p>
-                    En el año 2015 la <abbr title="Organización de las Naciones Unidas">ONU</abbr> se planteó para 2030 17 objetivos "para transformar el
-                    mundo". A seis años de la fecha de plazo, el progreso actual de los <abbr title="Objetivos de Desarrollo Sostenible">ODS</abbr> está por
-                    debajo de lo necesario. Sólo el 17% de las metas van por buen camino.
-                </p>
-
-                <aside>
-                    <p>Por Elena Navarro — 20 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre los objetivos de desarrollo sostenible">Leer más</a></p>
-                </aside>
-
-            </section>
-
-            <section>
-
-                <figure>
-                    <img class="tarjeta" src="img/blog-huerto.jpg" alt="Un huerto como portada del apartado">
-                    <figcaption>
-                        <cite>Foto de
-                            <a href="https://unsplash.com/@danielcgold?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Perfil en Uspash de Don Gold">Dan Gold</a> 
-                            en 
-                            <a href="https://unsplash.com/photos/tomatoes-hanging-on-tomato-plant4LiUIY2mI8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Imagen de una huerta en Unsplash">Unsplash</a>
-                        </cite>
-                    </figcaption>
-                </figure>                
-                
-                <h3><a href="" title="Explicación de cómo cultivar tu propio huerto">Cultiva tu propio huerto en casa</a></h3>
-
-                <p>
-                    En esta guía para principiantes se desarrolla el concepto de huerto urbano. Es un
-                    artículo práctico en el que se explica qué plantas son ideales en función del
-                    espacio disponible. El artículo concluye con un listado de los beneficios para el
-                    medio ambiente y también para la salud mental.
-                </p>
-
-                <aside>
-                    <p>Por Cecília Val — 15 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre cómo cultivar tu propio huerto">Leer más</a></p>
-                </aside>
-
-            </section>
-
-            <section>
-
-                <figure>
-                    <img class="tarjeta" src="img/blog-caminar.jpg" alt="La naturaleza portada del apartado">
-                    <figcaption>
-                        <cite>Foto de
-                            <a href="https://unsplash.com/@rthiemann?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Perfil en Uspash de Robert Thiemann">Robert Thiemann</a> 
-                            en 
-                            <a href="https://unsplash.com/photos/2-person-walking-on-road-betweengreen-trees-during-daytime3bYUmYV397E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" title="Imagen de la naturaleza en Unsplash">Unsplash</a>
-                        </cite>
-                    </figcaption>
-                </figure>                
-                
-                <h3><a href="" title="Explicación de cómo conectar con la naturaleza paseando">Conectar con la naturaleza paseando</a></h3>
-
-                <p>
-                    El tiempo que pasamos al aire libre es proporcional al bienestar mental y físico del
-                    que gozamos. Los baños de bosque japoneses inspirados en las tradiciones
-                    sintoístas y budistas demuestran que la comunicación con la naturaleza reduce
-                    significativamente los niveles de hormonas del estrés.
-                </p>
-
-                <aside>
-                    <p>Por Ana Torres — 10 de diciembre de 2024</p>
-                    <p class="enlaceBoton"><a href="" title="Información adicional sobre cómo conectar con la naturaleza paseando">Leer más</a></p>
-                </aside>
-            </section>
-
-            <aside>
-                <ul>
-                    <li class="enlaceBotonPaginacion"><a class="paginaActual" href="" title="Primera sección de información en la web">1</a></li>
-                    <li class="enlaceBotonPaginacion"><a href="" title="Segunda sección de información en la web">2</a></li>
-                    <li class="enlaceBotonPaginacion"><a href="" title="Tercera sección de información en la web">3</a></li>
-                    <li class="enlaceBotonPaginacion"><a href="" title="Más información adicional en la web sobre diferentes secciones">...</a></li>
-                </ul>
-            </aside>
-        </article>
-
+            </article>
+        </div>
     </main>
 
     <footer>
+        <div class="containerHeaderFooter">
 
-        <img src="img/logotip-n.svg" alt="Logotipo de la página web naturaeHub para el footer">
+            <div class="containerHFLeft">
+                <img src="img/logotip-n.svg" alt="Logotipo de la página web naturaeHub para el footer">
 
-        <p>
-            2024-2025. Efrén García Valencia
-        </p>
+                <p>
+                    2024-2025. Efrén García Valencia
+                </p>
 
-        <ul>
-            <li>
-                <a href="" title="Instagram de la página web asociada">
-                    <img src="img/instagram.svg" alt="Icono de instagram para el footer">
-                </a>
-            </li>
-            <li>
-                <a href="" title="Youtube de la página web asociada">
-                    <img src="img/youtube.svg" alt="Icono de youtube para el footer">
-                </a>
-            </li>
-        </ul>
+            </div>
 
-        <ul>
-            <li><a href="" title="Página POLÍTCA DE PRIVACIDAD para el trabajo PEC 3">Política de privacidad</a></li>
-            <li><a href="" title="Página POLÍTICA DE COOKIES para el trabajo PEC 3">Política de <em>cookies</em></a>
-            </li>
-            <li><a href="" title="Página AVISO LEGAL para el trabajo PEC 3">Aviso legal</a></li>
-        </ul>
+            <div class="containerHFRight">
 
+                <ul class="navIconos">
+                    <li>
+                        <a class="icono" href="" title="Instagram de la página web asociada">
+                            <img class="logotipo" src="img/instagram.svg" alt="Icono de instagram para el footer">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icono" href="" title="Youtube de la página web asociada">
+                            <img src="img/youtube.svg" alt="Icono de youtube para el footer">
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navFooter">
+                    <li><a class="llevaBarra" href="" title="Página POLÍTCA DE PRIVACIDAD para el trabajo PEC 3"><span
+                                class="resaltar">Política de
+                                privacidad</span></a>
+                    </li>
+                    <li><a class="llevaBarra" href="" title="Página POLÍTICA DE COOKIES para el trabajo PEC 3"><span
+                                class="resaltar">Política
+                                de
+                                <em>cookies</em></span></a>
+                    </li>
+                    <li><a href="" title="Página AVISO LEGAL para el trabajo PEC 3"><span class="resaltar">Aviso
+                                legal</span></a></li>
+                </ul>
+
+            </div>
+        </div>
     </footer>
+
 
 </body>
 
