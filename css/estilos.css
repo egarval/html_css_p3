@@ -45,7 +45,7 @@ html {
 }
 
 /* Para las tarjetas que se muestran en la web, hay que establecer un display flex */ 
-.coleccionTarjetas, .coleccionTarjetasBlog {
+.coleccionTarjetasIndex, .coleccionTarjetasBlog {
     display: flex;
     /* Por defecto, el display flex va a ser column */
     flex-direction: column;
@@ -617,7 +617,7 @@ abbr {
 /* Primero aquellas que sean comunes a ambas resoluciones, tanto tablet como móvil */
 
 @media screen and (min-width: 649px) {
-    .coleccionTarjetas {
+    .coleccionTarjetasIndex {
         /* Se disponen los elementos en línea */
         flex-direction: row;
         /* Espacio entre los elementos */
@@ -626,7 +626,7 @@ abbr {
         justify-content: space-around;
     }
 
-    .coleccionTarjetas .tarjeta {
+    .coleccionTarjetasIndex .tarjeta {
         /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
          flex: 1 20rem;
     }
