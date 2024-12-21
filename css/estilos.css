@@ -8,8 +8,6 @@ html {
     font-size: 10px;
     /* Modelo de cajas alternativo */
     box-sizing: border-box;
-    /* Tipografía usada en toda la web */
-    font-family: 'Alegreya', sans-serif;
 }
 
 * {
@@ -80,6 +78,8 @@ body {
     background-color: rgb(242, 242, 230);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
+    /* Tipografía usada en toda la web */
+    font-family: 'Alegreya', sans-serif;
 }
 
 p {
@@ -219,8 +219,8 @@ button, .enlaceBoton a, .enlaceBotonPaginacion a {
 button {
     /* Borde del botón */
     border: 0.1rem solid rgb(0, 0, 0);
-    /* Heredamos el color de fondo del botón */
-    background-color: inherit;
+    /* Color de fondo transparente */
+    background-color: transparent;
     /* Margen con el texto inferior */
     margin-bottom: 5rem;
     /* Para que el validador CSS no tenga adevertencias */
@@ -257,7 +257,7 @@ button {
     color: inherit;
 }
 
-.enlaceBoton a:hover {
+.enlaceBoton a:hover, button:hover {
     /* Cambio de color del borde en su estado hover */
     border: 0.1rem solid rgb(64, 195, 130); 
 }
@@ -464,8 +464,8 @@ input:focus {
 footer {
     /* Color de fondo del footer */
     background-color: rgb(0, 0, 0);
-    /* Textos dentro del footer de las páginas*/
-    color: rgb(255, 255, 255);
+    /* Para que el validador CSS no produzca warnings */
+    color: inherit;
     /* Margen con las tarjetas*/
     margin-top: 8rem;
     /* Margen con el logotipo */
@@ -533,7 +533,7 @@ footer a {
     font-size: 1.4rem;
 }
 
-.icono {
+.icono:hover {
     /* Cambiar la opacidad de los iconos del footer */
     opacity: 0.7;
 }
@@ -546,7 +546,7 @@ footer ul {
 
 /* Texto imagen fondo index.html */
 .textoImagenIndex {
-    /* Texto sobre la imagen de fondo de la página idex.html */
+    /* Texto sobre la imagen de fondo de la página index.html */
     color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;

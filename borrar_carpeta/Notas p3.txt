@@ -1,20 +1,44 @@
-Preguntar si es necesario el uso de <picture>, pues no hay imágenes alternativas.
-¿Esta bien la fuente de letra?
-¿Tipografias dentro de la web? No dice nada el pdf
-Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de aquí tengo que sacar algo? No parece que los mockups se estructuren así
-¿Compatibilidad con dispositivos viejos?
-¿Hay que usar cuadrículas flexibles? Aparecen en: https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design#tipograf%C3%ADa_responsiva
-¿Overflow hidden es necesario?
-¿El <cite> tiene atributos?
-¿Hay que incluir validaciones CSS de los inputs?
-Hacer que se vea el background del footer al ampliar la página
-Redefinición de width
-Redefinición de flex-direction
-Se pueden usar divs vacios a menos que declares una determinada media query
+**REVISIÓN DE ANOTACIONES HASTA EL MOMENTO**
 
+-> ENUNCIADO 
 
-tema-del-mes.html
+En post.html ->
+	"Imagen ocupando el 100% de la anchura del viewport (con los datos del autor de la fotografía) y, a continuación, el texto completo del artículo."
+
+En tema-del-mes.html ->
 	¿Transformar en una tabla las diferentes secciones?
 	¿Transformar en una lista de definiciones las diferentes secciones?
-post.html
-	-> imagen ocupando el 100% de la anchura del viewport (con los datos del autor de la fotografía) 
+	
+Para la maquetación de las páginas podéis usar cualquiera de los módulos CSS que se explican en la unidad 5 (Flexbox o Grid); aplicad el que consideréis adecuado a cada caso.
+	Hice uso de flexbox
+
+Informe web:
+	Explicación elementos HTML
+	Explicación elementos CSS
+		Explicación del CSS común y del particular a cada páginas
+	Indicar servicio de publicación + indicar URI a la página de index.html
+
+-> CSS GUÍA	
+
+Color blanco fondo tarjetas post-html + blog.html
+Arreglo color barra verde vertical
+
+-> DUDAS ACUMULADAS
+
+*Cosas a preguntar sí o sí
+	Preguntar si es necesario el uso de <picture>, pues no hay imágenes alternativas.
+	Hay que confirmar si puedes hacer la práctica únicamente con flexbox
+	Warnings validador CSS por las media queries
+	
+Respecto a la fuente de letra:
+	-> ¿Igual no hace falta? Se ve bien añadiendo en el body la fuente de letra
+
+Otras dudas aparte:
+	-> Se entiende que el elemento <cite> no tiene atributos
+	-> Hacer que se vea el background del footer al ampliar la página
+	
+Repaso de teoría si te sobra tiempo
+	-> Multi column layout / Diseño de múltiples columnes (lectura optativa) -> ¿de aquí tengo que sacar algo? No parece que los mockups se estructuren así
+	-> ¿Compatibilidad con dispositivos viejos?
+	-> ¿Hay que usar cuadrículas flexibles? Aparecen en: https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design#tipograf%C3%ADa_responsiva
+
