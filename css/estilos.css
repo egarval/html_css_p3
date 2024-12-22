@@ -600,14 +600,14 @@ footer .containerHFLeft img {
     /* Reducimos el ancho de la imagen del footer y ajustamos el alto */
     width: 40%;
     height: auto;
-    /* Separación con el textto de abajo */
+    /* Separación con el texto de abajo */
     margin-bottom: 2rem;
 }
 
 footer p {
     /* Se ajusta el tamaño del texto 2024-2025 Nombre y apellidos del alumno */
     font-size: 1.5rem;
-    /* Se ajusta el margen inferior */
+    /* Se ajusta el margen*/
     margin-bottom: 1rem;
 }
 
@@ -964,6 +964,13 @@ abbr {
         padding-right: 5rem;
     }
 
+    /* Citas */
+    cite {
+        /* Se incrementa el tamaño de la cita */
+        font-size: 1.4rem;
+    }
+
+
     /* CONTENEDORES HEADER Y FOOTER */
 
     .containerHeader,
@@ -1002,9 +1009,35 @@ abbr {
         list-style: none;
     }
 
+    .textoImagenIndex h2 {
+        /* Tamaño texto Naturae Hub */
+        font-size: 6rem;
+    }
+
+    .textoImagenIndex {
+        /* Se ajusta el alto del texto superpuesto sobre la imagen */
+        top: 28rem;
+    }
+
+    .textoImagenIndex h3 {
+        /* Tamaño texto Un espacio para los defensores del medio ambiente*/
+        font-size: 4rem;
+    }
+
     .navHeader li {
         /* Margen interno superior respecto al borde de la pagina para los enlaces Tema del mes y Blog*/
         padding-top: 2rem;
+    }
+
+    .navHeader li a {
+        /* Tamaño de los elementos de navegación principal*/
+        font-size: 1.8rem;
+    }
+
+    footer .containerHFLeft img {
+        /* Se restablece el tamaño de la imagen */
+        width: 100%;
+        height: auto;
     }
 
     .containerHFLeft img {
@@ -1012,10 +1045,6 @@ abbr {
         margin-top: -2rem;
     }
 
-    .containerHFLeft img+p {
-        /* Margen texto imagen icono superior nombre y apellidos */
-        margin-top: 3rem;
-    }
 
     .navIconos {
         /* Colocar los iconos al final del elemento flex */
@@ -1034,8 +1063,8 @@ abbr {
     }
 
     .navBlog {
-        /* Margen izquierdo del elemento blog respecto a la barra en el header */
-        margin-left: 2rem;
+        /* Margen interno izquierdo del elemento blog respecto a la barra en el header */
+        padding-left: 0.5rem;
     }
 
     .navBlog::after,
@@ -1062,6 +1091,8 @@ abbr {
     .contenidoIndex aside {
         /* Lo que ocupa el formulario */
         flex: 0.5;
+        /* Ajustar el margen superior para alinear con la definición de Naturae Hub */
+        margin-top: 7.5rem;
     }
 
     /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
