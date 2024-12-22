@@ -372,6 +372,25 @@ h3 a:hover {
 
 /* NAVEGACION INTERNA tema-del-mes.html */
 
+.navInterior {
+    /* Margen con la lista inferior */
+    margin-bottom: 5rem;
+    /* Aplicamos propiedades flex en línea centrando los elementos */
+    display: flex;
+    flex-direction: row;
+    /* Centramos los elementos */
+    justify-content: center;
+    /* Excluimos el tipo de lista */
+    list-style: none;
+}
+
+.navInterior li {
+    /* Aumenta el tamaño de los elementos de la navegación interior */
+    font-size: 1.2rem;
+    /* Se aumenta el peso de letra */
+    font-weight: bold;
+}
+
 .navInterior a {
     /* Quitar subrayado navegacion interna */
     text-decoration: none;
@@ -386,7 +405,7 @@ h3 a:hover {
 
 .llevaPunto::after {
     /* Colocar punto de separación */
-    margin: 1em;
+    margin: 0.5em;
     content: "\1F784";
     /* Color del punto separador */
     color: rgb(64, 195, 130);
@@ -626,15 +645,22 @@ footer nav a:hover {
 
 /* GESTIÓN DE LOS TÍTULOS DE LAS PÁGINAS */
 
-/* Título EL blog de Naturae Hub */
-.tituloBlog {
-    /* Tamaño del texto */
-    font-size: 3rem;
-    /* Distancia con la parte superior */
-    margin-top: 8rem;
+/* Título EL blog de Naturae Hub + Tema del mes enero 2025 */
+.tituloBlog, .tituloTemaMes {
     /* Se alinea en el centro */
     text-align: center;
+    /* Tamaño del texto */
+    font-size: 3rem;
 }
+
+/* Texto Animales en peligro de extinción */
+.tituloTemaMes + h3 {
+    /* Alinear el texto */
+    text-align: center;
+    /* Tamaño del texto */
+    font-size: 3rem;
+}
+
 
 /* Título El impacto de la fast fashion en el planeta*/
 .tituloPost {
@@ -711,6 +737,49 @@ ol li {
     font-size: 1.7rem;
     /* Margen entre los elementos de la lista ordenada */
      margin: 1rem;
+}
+
+/* GESTIÓN ELEMENTOS TEMA DEL MES */
+
+.elementoTemaMes {
+    /* Separación inferior entre las diferentes secciones del tema del mes */
+    margin-bottom: 6rem;
+}
+
+.numeroElemento {
+    /* Margen inferior #[NUMERO] con el texto de abajo */
+    margin-bottom: 1rem;
+}
+
+.numeroElemento::before {
+    /* Para indicar el # antes del número mediante CSS */
+    content:"\0023";
+}
+
+.numeroElemento + h3 {
+    /* Margen inferior con texto "Estado de conservación....*/
+    margin-bottom: 1rem;
+}
+
+.figuraTemaMes img {
+    /* Color de fondo de las imágenes del tema del mes */
+    background-color: rgb(255, 255, 255);
+    /* Márgenes interiores para que se vea el borde blanco*/
+    padding: 2rem;
+}
+
+.figuraTemaMes figcaption {
+    /* Margen superior con el borde de la imagen */
+    margin-top: 1rem;
+    /* Margen izquierdo para colocar la cita correctamente */
+    margin-left: -1rem;
+    /* Margen inferior respecto al texto */
+    margin-bottom: 3rem;
+}
+
+.figuraTemaMes figcaption cite {
+    /* Estilo de letra normal */
+    font-style: normal;
 }
 
 /* OTROS ELEMENTOS */
@@ -987,5 +1056,71 @@ abbr {
     iframe {
         width: 70%;
         height: 50rem;
+    }
+
+    /* GESTIÓN CONTENEDORES TEMA DEL MES */
+
+    .navInterior {
+        /* Cambiamos la disposición de elementos para que ahora estén puestos en columna */
+        flex-direction: column;
+        /* Separación entre los elementos */
+        gap:1rem;
+    }
+
+    .navInterior li {
+        /* Tamaño de la letra de los elementos de navegación interior */
+        font-size: 1.5rem;
+    }
+
+    .llevaPunto::after {
+        /* Se elimina el punto después de cada elemento de la navegación */
+        content:"";
+    }
+
+    .contenedorTemaMes {
+        /* Se incluye un display flex para colocar la navegación y las secciones en línea para dispositivos de resolución grande */
+        display:flex;
+        flex-direction: row;
+    }
+
+    .contenedorTemaMes aside {
+        /* Proporción que ocupa la navegación interna */
+        flex: 0.2;
+    }
+
+    .contenedorTemaMes .elementosTemaMes {
+        /* Proporción que ocupa el conjunto de secciones del tema del mes */
+        flex: 0.8;
+        /* Aplicamos un display flex column para cada uno de los elementos individuales */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elementoTemaMes {
+        /* Dentro de cada elemento, aplicamos otro display flex para ubicar los elementos en filas */
+        display: flex;
+        flex-direction: row;
+        /* Separación entre los elementos */
+        gap: 3rem;
+    }
+
+    .numeracionTemaMes {
+        /* Proporción que ocupa la numeración de la sección del tema del mes */
+        flex:0.25;
+    }
+
+    .figuraTemaMes {
+        /* Proporción que ocupa la figura de la sección del tema del mes */
+        flex:0.25
+    }
+
+    .figuraTemaMes img {
+        /* Reducimos el padding de la figura de la sección del tema del mes */
+        padding: 1rem;
+    }
+
+    .textoTemaMes {
+        /* Proporción que ocupa el texto de la sección del tema del mes */
+        flex:0.5;
     }
 }
