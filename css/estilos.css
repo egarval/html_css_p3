@@ -230,7 +230,7 @@ h1 {
 /* GESTIÓN DE LAS CITAS */
 
 cite {
-    /* Fondo de los textos de crédito de las imágenes */
+    /* Fondo de los textos de crédito */
     background-color: rgba(242, 242, 230, 0.7);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
@@ -447,13 +447,6 @@ h3 a:hover {
     margin-top: -0.6rem;
 }
 
-.navPost li:last-child::after {
-    /* Contenido vacío para que el texto permanezca alineado */
-    content: "";
-    /* Separación externa a la derecha */
-    margin-left: 1em;
-}
-
 .navPost a, .navPost p {
     /* Tamaño del texto en la navegación interna */
     font-size: 1.3rem;
@@ -468,7 +461,7 @@ h3 a:hover {
     /* Elemento separador > entre los diferentes elementos */
     content: "\003E";
     /* Margen entre los elementos */
-    margin: 1em;
+    margin: 0.5em;
 }
 
 
@@ -508,16 +501,31 @@ h3 a:hover {
 
 }
 
+.tarjetaImg cite {
+    /* Aumento del tamaño de las citas asociadas a tarjetas con imágenes*/
+    font-size: 1.2rem;
+}
+
  .tarjeta h3 {
      /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
      font-size: 2rem;   
 }
 
- .tarjetaImg h3 {
+ .coleccionTarjetasBlog .tarjetaImg h3 {
     /* Tamaño por defecto de las tarjetas que SÍ tienen imagen asociada */
     font-size: 2.5rem;
     /* Se reduce un poco el margen externo inferior respecto al título */
     margin-bottom: -1rem;
+}
+
+/* Títulos tarjetas post.html */
+.coleccionTarjetasPost .tarjetaImg h3 {
+    /* Tamaño de los textos */
+    font-size: 1.8rem;
+    /* Margen superior externo con la imagen */
+    margin-top: 1rem;
+    /* Margen inferior externo con el enlace en forma de botón */
+    margin-bottom: 1rem;
 }
 
 .tarjeta p,
@@ -721,9 +729,9 @@ header .resaltar {
     font-size: 3rem;
     /* Separación con el autor */
     margin-bottom: 4rem;
-    
+    /* Padding derecho para ajustarse al mockup */
+    padding-right: 8rem;
 }
-
 
 /* GESTIÓN DEL VÍDEO EN post.html */
 
@@ -754,7 +762,7 @@ iframe {
     /* Se alinea el texto al valor inicial */
     text-align: initial;
     /* Tamaño del texto */
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .citaVideo cite {
@@ -833,7 +841,7 @@ ol li {
     /* Margen inferior respecto al texto */
     margin-bottom: 3rem;
     /* Tamaño de los figcaption asociados las imágenes del tema del mes */
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .figuraTemaMes figcaption cite {
@@ -870,6 +878,8 @@ abbr {
     width: 100%;
     /* Alto */
     height: 0.1rem;
+    /* Margen externo inferior con otros enlaces de interés */
+    margin-bottom: 3rem;
 }
 
 
@@ -880,7 +890,7 @@ abbr {
     /* Margen inferior negativo para los enlaces de interés */
     margin-bottom: -2rem;
     /* Para dar peso al texto */
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* Texto "Escrito por Lourdes Gómez" */
@@ -888,12 +898,11 @@ abbr {
     /* Tamaño del texto */
     font-size: 1.5rem;
     /* Margen inferior respecto a la imagen que ocupa todo el ancho */
-    margin-bottom: -10rem;
+    margin-bottom: -5rem;
 }
 
 /* Texto "La moda pronta..." */
 .subtituloPost {
-
     /* Margen inferior texto post */
     margin-bottom: 5rem;
     /* El tamaño de fuentte se restablece */
@@ -901,9 +910,16 @@ abbr {
     /* Tamaño de letra */
     font-size: 2rem;
     /* Interlineado */
-    line-height: 2.5rem;
+    line-height: 3rem;
 }
 
+/* Titulos de las secciones dentro del html de post */
+.tituloSeccionPost {
+    /* Tamaño de letra */
+    font-size: 2.5rem;
+    /* Margen inferior con el contenido */
+    margin-bottom: 2rem;
+}
 
 /* MEDIA QUERIES */
 
@@ -974,7 +990,7 @@ abbr {
 
     /* ALTO DEL VÍDEO EN post.html */
     iframe {
-        height: 35rem;
+        height: 40rem;
     }
 }
 
@@ -1091,12 +1107,16 @@ abbr {
         padding-left: 0.5rem;
     }
 
-    .navBlog::after,
-    .navFooter li:nth-child(3)::after {
-        /* Creamos un content vacio con tamaño igual a los otros elementos de la lista para que quede el texto en la misma horizontal en el header/footer */
-        content: "";
-        font-size: 2rem;
+
+    .navHeader li:last-child{
+        /* Margen superior para alinear el texto 'BLOG' con el resto del contenido */
+        margin-top: 0.8rem;
     }
+
+    .navFooter li:last-child {
+        /* Margen superior para alinear el texto 'Aviso legal' con el resto del contenido */
+        margin-top: 1.5rem;
+    } 
 
     /* GESTIÓN CONTENEDOR TEXTO INDEX */
 
@@ -1223,5 +1243,28 @@ abbr {
     .textoTemaMes {
         /* Proporción que ocupa el texto de la sección del tema del mes */
         flex:0.5;
+    }
+
+    /* Texto "La moda pronta..." */
+    .subtituloPost {
+        font-size: 3rem;
+        /* Interlineado */
+        line-height: 5rem;
+    }
+
+    .tituloSeccionPost {
+        /* Incremento del tamaño de los títulos de las secciones en post.html */
+        font-size: 3rem;
+    }
+
+    /* Pie de foto del vídeo */
+    .citaVideo {
+        /* Margen exterior izquierdo para alinear el pie respecto al vídeo en resoluciones grandes */
+        margin-left: 15rem;
+    }
+
+    .textoEnlacesInteres {
+        /* Texto 'Te puede interesar' dentro de post.html */
+        font-size: 2rem;
     }
 }
