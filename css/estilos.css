@@ -81,11 +81,6 @@ html {
     font-size: 1.5rem;
 }
 
-.navIconos {
-    /* Espacio entre los elementos hijos */
-    gap: 0.5rem;
-}
-
 .enlacesPaginacion li,
 .navIconos li {
     /* Eliminar los puntos de los enlaces de paginación en blog.html */
@@ -128,10 +123,6 @@ img {
     max-width: 100%;
 }
 
-article header {
-    /* Margen inferior texto título */
-    margin-bottom: 3rem;
-}
 
 header h2 {
     /* Tamaño por defecto del h2 en los headers */
@@ -139,7 +130,6 @@ header h2 {
     /* Margen inferior header h2*/
     margin-bottom: 5rem;
 }
-
 
 
 /* MENU NAVEGACION PRINCIPAL */
@@ -655,6 +645,11 @@ footer a {
     font-size: 1.4rem;
 }
 
+.navIconos {
+    /* Espacio entre los elementos hijos de los iconos del footer */
+    gap: 0.5rem;
+}
+
 .icono:hover {
     /* Cambiar la opacidad de los iconos del footer */
     opacity: 0.7;
@@ -849,39 +844,8 @@ ol li {
     font-style: normal;
 }
 
-/* OTROS ELEMENTOS */
 
-/* Cursor abreviaturas */
-abbr {
-    /* Cambio de la forma del cursor en las abreviaturas */
-    cursor: help;
-}
-
-/* Texto destacado enero 2025 */
-.marcarTexto {
-    /* Texto destacado sobre verde en la página tema-del-mes.html */
-    color: rgb(255, 255, 255);
-    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
-    background-color: rgb(64, 195, 130);
-    /* Márgenes internos para poder resaltar más el subrayado verde */
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-/* DIV separador de contenidos del post.html con los enlaces de interés */
-.separador {
-    /* Color de fondo */
-    background-color: rgb(0, 0, 0);
-    /* Ocupa todo el ancho */
-    width: 100%;
-    /* Alto */
-    height: 0.1rem;
-    /* Margen externo inferior con otros enlaces de interés */
-    margin-bottom: 3rem;
-}
-
+/* TEXTOS EN EL FORM.HTML */
 
 /* TEXTO "Te puede interesar" EN EL form.html */
 .textoEnlacesInteres {
@@ -921,6 +885,39 @@ abbr {
     margin-bottom: 2rem;
 }
 
+/* OTROS ELEMENTOS */
+
+/* Cursor abreviaturas */
+abbr {
+    /* Cambio de la forma del cursor en las abreviaturas */
+    cursor: help;
+}
+
+/* Texto destacado enero 2025 */
+.marcarTexto {
+    /* Texto destacado sobre verde en la página tema-del-mes.html */
+    color: rgb(255, 255, 255);
+    /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
+    background-color: rgb(64, 195, 130);
+    /* Márgenes internos para poder resaltar más el subrayado verde */
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* DIV separador de contenidos del post.html con los enlaces de interés */
+.separador {
+    /* Color de fondo */
+    background-color: rgb(0, 0, 0);
+    /* Ocupa todo el ancho */
+    width: 100%;
+    /* Alto */
+    height: 0.1rem;
+    /* Margen externo inferior con otros enlaces de interés */
+    margin-bottom: 3rem;
+}
+
 /* MEDIA QUERIES */
 
 /* Primero aquellas que sean comunes a ambas resoluciones, tanto tablet como móvil */
@@ -953,7 +950,7 @@ abbr {
 }
 
 /* Tablet */
-@media screen and (min-width: 650px) and (max-width: 1199px) {
+@media screen and (min-width: 649px) and (max-width: 1199px) {
 
     .citaImagenCompleta cite {
         /* Tamaño texto cita principal */
@@ -988,14 +985,19 @@ abbr {
         flex: 1 30rem;
     }
 
-    /* ALTO DEL VÍDEO EN post.html */
     iframe {
+        /* Alto del vídeo en post.html */
         height: 40rem;
     }
 }
 
 /* Ordenador */
 @media screen and (min-width: 1200px) {
+
+    header h2 {
+        /* Tamaño títulos artículos index para dispositivos grandes */
+        font-size: 3rem;
+    }
 
     /* GESTIÓN DE LOS CONTENEDORES PARA EL CONTENIDO PRINCIPAL */
 
@@ -1110,7 +1112,7 @@ abbr {
 
     .navHeader li:last-child{
         /* Margen superior para alinear el texto 'BLOG' con el resto del contenido */
-        margin-top: 0.8rem;
+        margin-top: 0.7rem;
     }
 
     .navFooter li:last-child {
