@@ -42,8 +42,8 @@ html {
 .containerMainFull {
     padding-top: 6rem;
     padding-bottom: 6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 
@@ -394,9 +394,9 @@ h3 a:hover {
 
 .navInterior li {
     /* Aumenta el tamaño de los elementos de la navegación interior */
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     /* Se aumenta el peso de letra */
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .navInterior a {
@@ -413,13 +413,19 @@ h3 a:hover {
 
 .llevaPunto::after {
     /* Colocar punto de separación */
-    margin: 0.5em;
+    margin: 0.2em;
     content: "\1F784";
     /* Color del punto separador */
     color: rgb(64, 195, 130);
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
 }
+
+.navInterior li:last-child {
+    /* Para alinear el texto 'Oso polar' con el resto de la navegación */
+    margin-top: 0.18rem;
+}
+
 
 /* NAVEGACION DE LA PAGINA post.html */
 
@@ -438,12 +444,12 @@ h3 a:hover {
     list-style: none;
 }
 
-.navPost li:nth-child(3) {
+.navPost li:last-child {
     /* Para alinear el texto con los enlaces en el menú de navegación */
     margin-top: -0.6rem;
 }
 
-.navPost li:nth-child(3)::after {
+.navPost li:last-child::after {
     /* Contenido vacío para que el texto permanezca alineado */
     content: "";
     /* Separación externa a la derecha */
@@ -684,7 +690,15 @@ header .resaltar {
     /* Se alinea en el centro */
     text-align: center;
     /* Tamaño del texto */
-    font-size: 3rem;
+    font-size: 3.5rem;
+}
+
+.tituloTemaMes {
+    /* Padding interno para alinear el texto Tema del mes enero 2025 en dispositivos móviles */
+    padding-left: 8rem;
+    padding-right: 8rem;
+    /* Interlineado para el texto en móvil */
+    line-height: 4.5rem;
 }
 
 /* Texto Animales en peligro de extinción */
@@ -693,6 +707,8 @@ header .resaltar {
     text-align: center;
     /* Tamaño del texto */
     font-size: 3rem;
+    /* Dejamos algo más de margen de separación entre el título y la navegación interior */
+    margin-bottom: 5rem;
 }
 
 
@@ -783,6 +799,8 @@ ol li {
 .numeroElemento {
     /* Margen inferior #[NUMERO] con el texto de abajo */
     margin-bottom: 1rem;
+    /* Tamaño de los números */
+    font-size: 4rem;
 }
 
 .numeroElemento::before {
@@ -792,7 +810,9 @@ ol li {
 
 .numeroElemento + h3 {
     /* Margen inferior con texto "Estado de conservación....*/
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    /* Tamaño del texto respecto al número */
+    font-size: 3rem;
 }
 
 .figuraTemaMes img {
@@ -809,6 +829,8 @@ ol li {
     margin-left: -1rem;
     /* Margen inferior respecto al texto */
     margin-bottom: 3rem;
+    /* Tamaño de los figcaption asociados las imágenes del tema del mes */
+    font-size: 1.1rem;
 }
 
 .figuraTemaMes figcaption cite {
@@ -830,6 +852,11 @@ abbr {
     color: rgb(255, 255, 255);
     /* Fondo de color para el mes y año en el titular de la página tema-del-mes.html */
     background-color: rgb(64, 195, 130);
+    /* Márgenes internos para poder resaltar más el subrayado verde */
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 /* DIV separador de contenidos del post.html con los enlaces de interés */
@@ -1166,22 +1193,34 @@ abbr {
         display: flex;
         flex-direction: row;
         /* Separación entre los elementos */
-        gap: 3rem;
+        gap: 5rem;
     }
 
     .numeracionTemaMes {
         /* Proporción que ocupa la numeración de la sección del tema del mes */
-        flex:0.25;
+        flex:0.3;
     }
 
     .figuraTemaMes {
         /* Proporción que ocupa la figura de la sección del tema del mes */
-        flex:0.25
+        flex:0.3
+    }
+
+    .textoTemaMes {
+        /* Proporción que ocupa el texto de la sección del tema del mes */      
+        flex:0.40
     }
 
     .figuraTemaMes img {
         /* Reducimos el padding de la figura de la sección del tema del mes */
         padding: 1rem;
+    }
+
+    .figuraTemaMes figcaption cite{
+        /* Se reduce el tamaño de la cita de las imágenes en la sección del tema de mes */
+        font-size: 1rem;
+        /* Interlineado por si no cabe la cita en una sola línea al disminuir el tamaño */
+        line-height: 2rem;
     }
 
     .textoTemaMes {
