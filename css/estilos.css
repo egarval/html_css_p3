@@ -181,7 +181,7 @@ h1 {
     padding-bottom: 4rem;
 }
 
-/* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML */
+/* GESTION DE LA IMAGEN CENTRAL DE INDEX.HTML Y POST.HTML */
 
 /* Imagen central de index.html */
 
@@ -213,7 +213,7 @@ h1 {
 /* Gestión texto imagen index */
 .textoImagenIndex h2 {
     /* Tamaño de la fuente de letra */
-    font-size: 3rem;
+    font-size: 4rem;
     /* Margen con el texto de abajo */
     margin-bottom: 3rem;
 }
@@ -224,7 +224,9 @@ h1 {
     padding-left: 4rem;
     padding-right: 4rem;
     /* Tamaño de fuente */
-    font-size: 2rem;
+    font-size: 2.5rem;
+    /* El grosor de fuente es el normal */
+    font-weight: 400;
 }
 
 /* GESTIÓN DE LAS CITAS */
@@ -254,6 +256,8 @@ cite a {
     width: 100%;
     /* Alinear el texto a la derecha */
     text-align: right;
+    /* Disponemos algo de margen adicional para la cita en las imágenes */
+    margin-left: 1rem;
     /* Encajar el texto arriba */
     top: -5rem;
 }
@@ -284,6 +288,8 @@ a {
     /* Subrayado con puntos en un enlace */
     text-decoration: underline;
     text-decoration-style: dotted;
+    /* Dejar espacio por debajo del texto */
+    text-underline-offset: 0.4rem;
 }
 
 a:hover {
@@ -297,10 +303,10 @@ button,
 .enlaceBoton a,
 .enlaceBotonPaginacion a {
     /* Márgenes internos del botón */
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
 }
 
 button,
@@ -316,6 +322,8 @@ button {
     border: 0.1rem solid rgb(0, 0, 0);
     /* Margen con el texto inferior */
     margin-bottom: 5rem;
+    /* Tamaño del texto del botón */
+    font-size: 1.7rem;
 }
 
 .enlaceBoton {
@@ -499,7 +507,7 @@ h3 a:hover {
 .tarjeta h3,
 .tarjetaImg h3 {
     /* Tamaño por defecto de las tarjetas de la página */
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .tarjeta p,
@@ -523,18 +531,26 @@ h3 a:hover {
 
 label {
     /* Tamaño base de las labels */
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 
 .infoPrivacidad {
     /* Tamaño base del texto "Antes de enviar tus datos... */
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    /* Margen con la parte de abajo */
+    margin-bottom: 1rem;
+}
+
+.infoPrivacidad + p {
+    /* Margen check política de privacidad con el botón de envío */
+    margin-bottom: 1rem;
 }
 
 input[type="checkbox"] {
     /* Para alinear el check de privacidad con el texto */
     vertical-align: middle;
 }
+
 
 input[type="text"],
 input[type="email"] {
@@ -580,9 +596,19 @@ footer {
 }
 
 /* Para la imagen que es hijo directo */
-footer>img {
-    /* Margen de la imagen */
-    margin: 3rem;
+footer .containerHFLeft img {
+    /* Reducimos el ancho de la imagen del footer y ajustamos el alto */
+    width: 40%;
+    height: auto;
+    /* Separación con el textto de abajo */
+    margin-bottom: 2rem;
+}
+
+footer p {
+    /* Se ajusta el tamaño del texto 2024-2025 Nombre y apellidos del alumno */
+    font-size: 1.5rem;
+    /* Se ajusta el margen inferior */
+    margin-bottom: 1rem;
 }
 
 footer p,
@@ -591,6 +617,8 @@ footer a {
     color: rgb(255, 255, 255);
     /* Para que el validador CSS no tenga adevertencias */
     background-color: inherit;
+
+    font-weight: 400;
 }
 
 footer a {
@@ -616,6 +644,7 @@ footer a {
 }
 
 footer ul {
+    /* Quitar el estilo de lista del footer */
     list-style: none;
 }
 
@@ -632,6 +661,11 @@ footer nav a {
 footer nav a:hover {
     /* Quitar el subrayado */
     text-decoration: none;
+}
+
+header .resaltar {
+    /* Indicamos el grosor de los apartados TEMA DEL MES/BLOG de la cabecera header */
+    font-weight: 700;
 }
 
 /* Estado hover enlaces header, footer y navegación interna del post */
