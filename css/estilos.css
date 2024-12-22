@@ -73,9 +73,12 @@ html {
 /* Contenedor enlaces paginación blog.html*/
 .enlacesPaginacion {
     /* Separación entre los elementos */
-    gap: 1rem;
+    gap: 2rem;
     /* Separación con los elementos de arriba */
     margin-top: 6rem;
+    margin-bottom: -5rem;
+    /* Tamaño elementos menú navegación */
+    font-size: 1.5rem;
 }
 
 .navIconos {
@@ -137,12 +140,7 @@ header h2 {
     margin-bottom: 5rem;
 }
 
-section h3 {
-    /* Tamaño de las secciones */
-    font-size: 2rem;
-    /* Margen inferior texto */
-    margin-bottom: 3rem;
-}
+
 
 /* MENU NAVEGACION PRINCIPAL */
 
@@ -330,7 +328,7 @@ button {
     /* Posición absoluta para poder fijar el botón */
     position: absolute;
     /* Botón en el fondo */
-    bottom: 0rem;
+    bottom: 1rem;
     /* Margen a la izquierda */
     left: 1rem;
 }
@@ -510,16 +508,24 @@ h3 a:hover {
 
 }
 
-.tarjeta h3,
-.tarjetaImg h3 {
-    /* Tamaño por defecto de las tarjetas de la página */
-    font-size: 2rem;
+ .tarjeta h3 {
+     /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
+     font-size: 2rem;   
+}
+
+ .tarjetaImg h3 {
+    /* Tamaño por defecto de las tarjetas que SÍ tienen imagen asociada */
+    font-size: 2.5rem;
+    /* Se reduce un poco el margen externo inferior respecto al título */
+    margin-bottom: -1rem;
 }
 
 .tarjeta p,
 .tarjetaImg p {
     /* Margen de la tarjeta con el texto de arriba */
     margin-top: 2rem;
+    /* Se reduce un poco el margen externo inferior respecto al título */
+    margin-bottom: 1rem;
 }
 
 .tarjeta h3 a,
@@ -528,9 +534,9 @@ h3 a:hover {
     text-decoration: none;
 }
 
-.textoTarjetaImg aside p {
+.textoTarjetaImg aside p:first-child {
     /* Reducir el tamaño del autor*/
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* FORMULARIO */
@@ -603,9 +609,6 @@ footer {
 
 /* Para la imagen que es hijo directo */
 footer .containerHFLeft img {
-    /* Reducimos el ancho de la imagen del footer y ajustamos el alto */
-    width: 40%;
-    height: auto;
     /* Separación con el texto de abajo */
     margin-bottom: 2rem;
 }
@@ -1059,12 +1062,6 @@ abbr {
     .navHeader li a {
         /* Tamaño de los elementos de navegación principal*/
         font-size: 1.8rem;
-    }
-
-    footer .containerHFLeft img {
-        /* Se restablece el tamaño de la imagen */
-        width: 100%;
-        height: auto;
     }
 
     .containerHFLeft img {
