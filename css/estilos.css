@@ -102,7 +102,7 @@ body {
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
     /* Tipografía usada en toda la web */
-    font-family: 'Alegreya', sans-serif;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 p {
