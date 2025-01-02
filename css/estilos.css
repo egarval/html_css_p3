@@ -51,9 +51,6 @@ html {
 
 
 /* Para las tarjetas que se muestran en la web y la separación de contenido en el index en dispositivos de resolución grande */
-.coleccionTarjetasIndex,
-.coleccionTarjetasBlog,
-.coleccionTarjetasPost,
 .contenidoIndex,
 .navIconos {
     display: flex;
@@ -924,28 +921,19 @@ abbr {
 
 @media screen and (min-width: 649px) {
 
+    /* GESTIÓN DE LAS TARJETAS A NIVEL GLOBAL */
+    .coleccionTarjetasIndex, .coleccionTarjetasBlog, .coleccionTarjetasPost {
+        /* Uso de grid */
+        display: grid;
+    }
+
     /* GESTIÓN DE LAS TARJETAS EN EL INDEX */
+
     .coleccionTarjetasIndex {
-        /* Se disponen los elementos en línea */
-        flex-direction: row;
-        /* Espacio entre los elementos */
+        /* Creación de columnas */
+        grid-template-columns: repeat(3, 1fr);
+        /* Espacio entre las columnas */
         gap: 4rem;
-        /* Dejar espacio entre los extremos */
-        justify-content: space-around;
-    }
-
-    .coleccionTarjetasIndex .tarjeta {
-        /* Todos los elementos tienen el mismo tamaño con un tamaño base de 20rem */
-        flex: 1 20rem;
-    }
-
-    /* GESTIÓN DE LAS TARJETAS EN EL BLOG + TARJETAS EN EL POST */
-    .coleccionTarjetasBlog,
-    .coleccionTarjetasPost {
-        /* Se disponen los elementos en línea */
-        flex-direction: row;
-        /* Para que el contenido de los elementos no salga del contenedor */
-        flex-wrap: wrap;
     }
 }
 
@@ -963,28 +951,15 @@ abbr {
         width: 50%;
     }
 
-    /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
-    .coleccionTarjetasBlog {
-        /* Espacio entre los elementos */
+    /* GESTIÓN DE LAS TARJETAS EN EL BLOG + POST */
+
+    .coleccionTarjetasBlog, .coleccionTarjetasPost {
+        /* Creación de columnas */
+        grid-template-columns: repeat(2, 1fr);
+        /* Espacio entre las columnas */
         gap: 5rem;
     }
-
-    .coleccionTarjetasBlog .tarjetaImg {
-        /* Especificamos el tamaño mínimo de las tarjetas */
-        flex: 1 30rem;
-    }
-
-    /* GESTIÓN DE LAS TARJETAS EN EL POST */
-    .coleccionTarjetasPost {
-        /* Espacio entre los elementos */
-        gap: 5rem;
-    }
-
-    .coleccionTarjetasPost .tarjetaImg {
-        /* Especificamos el tamaño mínimo de las tarjetas */
-        flex: 1 30rem;
-    }
-
+ 
     iframe {
         /* Alto del vídeo en post.html */
         height: 40rem;
@@ -1141,26 +1116,24 @@ abbr {
         margin-top: 7.5rem;
     }
 
+
+    /* GESTIÓN DE LAS TARJETAS EN EL BLOG + POST */
+
     /* GESTIÓN DE LAS TARJETAS EN EL BLOG */
     .coleccionTarjetasBlog {
+        /* Creación de columnas */
+        grid-template-columns: repeat(3, 1fr);
         /* Espacio entre los elementos */
         gap: 10rem;
     }
 
-    .coleccionTarjetasBlog .tarjetaImg {
-        /* Especificamos el tamaño mínimo de las tarjetas */
-        flex: 1 50rem;
-    }
-
+  
     /* GESTIÓN DE LAS TARJETAS EN EL POST */
     .coleccionTarjetasPost {
+        /* Creación de columnas */
+        grid-template-columns: repeat(4, 1fr);
         /* Espacio entre los elementos */
         gap: 3rem;
-    }
-
-    .coleccionTarjetasPost .tarjetaImg {
-        /* Especificamos el tamaño mínimo de las tarjetas */
-        flex: 0.25 20rem;
     }
 
     /* ALTO DEL VÍDEO EN post.html */
