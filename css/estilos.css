@@ -794,29 +794,41 @@ ol li {
 
 /* GESTIÓN ELEMENTOS TEMA DEL MES */
 
+/* Primero se hace la gestión del contador en las listas */
+.elementosTemaMes {
+    /* Inicializa un contador llamado counter */
+    counter-reset: counter;
+}
+
+.elementosTemaMes li {
+    /* Quita el tipo de lista*/
+    list-style-type: none;
+    /* Por cada elemento li aumenta el contador */
+    counter-increment: counter;
+}
+
+.numeracionTemaMes header h3::before {
+    /* Antes de cada h3 incluimos # + el contador actual */
+    content: "#" counter(counter);
+    /* Tamaño de la fuente */
+    font-size: 5rem;
+    /* Se aplica un display block para mover el texto debajo de la numeración*/
+    display: block;
+}
+
+.numeracionTemaMes header h3 {
+    /* Margen inferior con texto "Estado de conservación....*/
+    margin-bottom: 0;
+    /* Tamaño del texto respecto al número */
+    font-size: 2.5rem;
+}
+
 .elementoTemaMes {
     /* Separación inferior entre las diferentes secciones del tema del mes */
     margin-bottom: 6rem;
 }
 
-.numeroElemento {
-    /* Margen inferior #[NUMERO] con el texto de abajo */
-    margin-bottom: 1rem;
-    /* Tamaño de los números */
-    font-size: 4rem;
-}
 
-.numeroElemento::before {
-    /* Para indicar el # antes del número mediante CSS */
-    content:"\0023";
-}
-
-.numeroElemento + h3 {
-    /* Margen inferior con texto "Estado de conservación....*/
-    margin-bottom: 0;
-    /* Tamaño del texto respecto al número */
-    font-size: 3rem;
-}
 
 .figuraTemaMes img {
     /* Color de fondo de las imágenes del tema del mes */
