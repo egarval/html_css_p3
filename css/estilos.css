@@ -679,7 +679,7 @@ header .resaltar {
 
 /* Estado hover enlaces header, footer y navegación interna del post */
 .resaltar:hover {
-    /* Color del estado hover de los enlaces del header, footer y navegación interna del post  */
+    /* Color del estado hover de los enlaces del header, footer y navegación interna del post */
     /* Se usa un span porque si no te marca también la barra de color */
     color: rgb(64, 195, 130);
     /* Evitar que el validador CSS tenga problemas */
