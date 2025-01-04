@@ -8,6 +8,8 @@ html {
     font-size: 10px;
     /* Modelo de cajas alternativo */
     box-sizing: border-box;
+    /* Para evitar que genere una barra horizontal */
+    overflow-x: hidden;
 }
 
 * {
@@ -85,7 +87,8 @@ html {
     gap: 2rem;
     /* Separación con los elementos de arriba */
     margin-top: 6rem;
-    margin-bottom: -5rem;
+    /* Separación con el footer */
+    margin-bottom: 3rem;
     /* Tamaño elementos menú navegación */
     font-size: 1.5rem;
 }
@@ -120,7 +123,7 @@ p {
     /* Evitar que el validador CSS tenga problemas */
     background-color: inherit;
     /* Interlineado base */
-    line-height: 3rem;
+    line-height: 2.6rem;
     /* Tamaño base */
     font-size: 1.8rem;
     /* Margen inferior */
@@ -464,14 +467,21 @@ h3 a:hover {
 
 /* GESTION DE LAS TARJETAS */
 
+/* GESTIÓN DE LAS TARJETAS A NIVEL GLOBAL */
+.coleccionTarjetasIndex, .coleccionTarjetasBlog, .coleccionTarjetasPost {
+    /* Uso de grid */
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Espacio  */
+    gap: 3rem;
+}
+
 .tarjeta,
 .tarjetaImg {
     /* Fondo de las tarjetas */
     background-color: rgb(255, 255, 255);
     /* Evitar que el validador CSS tenga problemas */
     color: inherit;
-    /* Margen superior externo de la tarjeta*/
-    margin-top: 3rem;
     /* Para poder redimensionar el enlace de botón como absolute */
     position: relative;
 }
@@ -610,7 +620,7 @@ footer {
     /* Para que el validador CSS no produzca warnings */
     color: inherit;
     /* Margen con las tarjetas*/
-    margin-top: 8rem;
+    margin-top: 3rem;
     /* Margen con el logotipo */
     padding-top: 3rem;
     /* Para alinear en el centro el texto del footer del contenedor que abarca todo el espacio */
@@ -871,8 +881,8 @@ ol li {
 .textoEnlacesInteres {
     /* Margen superior negativo para los enlaces de interés */
     margin-top: -3rem;
-    /* Margen inferior negativo para los enlaces de interés */
-    margin-bottom: -2rem;
+    /* Margen inferior para los enlaces de interés */
+    margin-bottom: 1rem;
     /* Para dar peso al texto */
     font-weight: 700;
 }
@@ -947,65 +957,25 @@ abbr {
 
 @media screen and (min-width: 649px) {
 
-    /* GESTIÓN DE LAS TARJETAS A NIVEL GLOBAL */
-    .coleccionTarjetasIndex, .coleccionTarjetasBlog, .coleccionTarjetasPost {
-        /* Uso de grid */
-        display: grid;
-    }
-
     /* GESTIÓN DE LAS TARJETAS EN EL INDEX */
 
     .coleccionTarjetasIndex {
         /* Creación de columnas */
         grid-template-columns: repeat(3, 1fr);
-        /* Espacio entre las columnas */
+        /* Espacio */
         gap: 4rem;
     }
-
-    /* NAVEGACIÓN DEL POST */
-    .navPost a, .navPost p {
-        /* Tamaño del texto en la navegación interna */
-        font-size: 2rem;
-    }
 }
+
 
 /* Tablet */
 @media screen and (min-width: 649px) and (max-width: 1199px) {
 
-    /* GESTIÓN DE LOS TEXTOS EN LA APLICACIÓN */
-    p {
-        /* Interlineado base */
-        line-height: 3rem;
-        /* Tamaño base */
-        font-size: 2rem;
+    html {
+        /* Se redefine el tamaño de letra para ajustar las unidades rem */
+        font-size: 11px;
     }
-    
-    .tarjeta h3 {
-        /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
-        font-size: 2.8rem;   
-    }
-
-    .citaImagenCompleta cite {
-        /* Tamaño texto cita principal */
-        font-size: 1.3rem;
-    }
-
-    ol li {
-        /* Tamaño fuente de letra texto ordenado */
-        font-size: 2rem;
-    }
-
-    /* Citas */
-    cite {
-        /* Se incrementa el tamaño de la cita */
-        font-size: 1.3rem;
-    }
-
-    .navInterior li {
-        /* Tamaño elementos navegación interior tema-del-mes*/
-        font-size: 1.7rem;
-    }
-
+ 
     input[type="text"],
     input[type="email"] {
         /* Se sobreescribe el ancho para escribir en los campos */
@@ -1017,8 +987,8 @@ abbr {
     .coleccionTarjetasBlog, .coleccionTarjetasPost {
         /* Creación de columnas */
         grid-template-columns: repeat(2, 1fr);
-        /* Espacio entre las columnas */
-        gap: 5rem;
+        /* Espacio */
+        gap: 4rem;
     }
  
     iframe {
@@ -1028,34 +998,16 @@ abbr {
 
     .navPost li:last-child {
         /* Para alinear el texto del final con los enlaces en el menú de navegación */
-        margin-top: -0.2rem;
+        margin-top: -0.5rem;
     }
 }
 
 /* Ordenador */
 @media screen and (min-width: 1200px) {
 
-    /* GESTIÓN DE LOS TEXTOS EN LA APLICACIÓN */
-    p {
-        /* Interlineado base */
-        line-height: 3.5rem;
-        /* Tamaño base */
-        font-size: 2.2rem;
-    }
-
-    .tarjeta h3 {
-        /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
-        font-size: 2.8rem;   
-    }
-
-    header h2 {
-        /* Tamaño títulos artículos index para dispositivos grandes */
-        font-size: 3.5rem;
-    }
-
-    ol li {
-        /* Tamaño fuente de letra texto ordenado */
-        font-size: 2.2rem;
+    html {
+        /* Se redefine el tamaño de letra para ajustar las unidades rem */
+        font-size: 12px;
     }
 
     /* GESTIÓN DE LOS CONTENEDORES PARA EL CONTENIDO PRINCIPAL */
@@ -1071,12 +1023,6 @@ abbr {
         padding-right: 5rem;
     }
 
-    /* Citas */
-    cite {
-        /* Se incrementa el tamaño de la cita */
-        font-size: 1.4rem;
-    }
-
 
     /* CONTENEDORES HEADER Y FOOTER */
 
@@ -1088,9 +1034,9 @@ abbr {
         /* Dejar espacio entre los extremos */
         justify-content: space-between;
         /* Margenes internos a justificar */
-        padding-left: 6rem;
+        padding-left: 5rem;
         padding-bottom: 1rem;
-        padding-right: 6rem;
+        padding-right: 5rem;
     }
 
     .containerHeader {
@@ -1118,7 +1064,7 @@ abbr {
 
     .textoImagenIndex h2 {
         /* Tamaño texto Naturae Hub */
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     .textoImagenIndex {
@@ -1128,17 +1074,12 @@ abbr {
 
     .textoImagenIndex h3 {
         /* Tamaño texto Un espacio para los defensores del medio ambiente*/
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .navHeader li {
         /* Margen interno superior respecto al borde de la pagina para los enlaces Tema del mes y Blog*/
         padding-top: 2rem;
-    }
-
-    .navHeader li a {
-        /* Tamaño de los elementos de navegación principal*/
-        font-size: 1.8rem;
     }
 
     .containerHFLeft img {
@@ -1151,16 +1092,17 @@ abbr {
         /* Colocar los iconos al final del elemento flex */
         justify-content: flex-end;
         /* Margen con el menu de navegacion inferior */
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         /* Margen derecho para alinear con el nav de abajo */
         margin-right: 1rem;
+        /* Ajuste del margen externo superior */
+        margin-top: -1rem;
     }
 
     .llevaBarra::after {
         /* Incluir el caracter barra larga como separador en la navegacion del header y footer */
-        margin-left: 2rem;
+        margin-left: 1rem;
         content: "\007C";
-        font-size: 2rem;
     }
 
     .navBlog {
@@ -1174,10 +1116,11 @@ abbr {
         margin-top: 0.7rem;
     }
 
-    .navFooter li:last-child {
-        /* Margen superior para alinear el texto 'Aviso legal' con el resto del contenido */
-        margin-top: 1.5rem;
-    } 
+    .navFooter li {
+        /* Se ajusta el margen izquierdo en la navegación del footer */
+        margin-left: 0rem;
+
+    }
 
     /* GESTIÓN CONTENEDOR TEXTO INDEX */
 
@@ -1196,10 +1139,7 @@ abbr {
     .contenidoIndex aside {
         /* Lo que ocupa el formulario */
         flex: 0.5;
-        /* Ajustar el margen superior para alinear con la definición de Naturae Hub */
-        margin-top: 7.5rem;
     }
-
 
     /* GESTIÓN DE LAS TARJETAS EN EL BLOG + POST */
 
@@ -1208,7 +1148,7 @@ abbr {
         /* Creación de columnas */
         grid-template-columns: repeat(3, 1fr);
         /* Espacio entre los elementos */
-        gap: 10rem;
+        gap: 4rem;
     }
 
   
@@ -1217,7 +1157,7 @@ abbr {
         /* Creación de columnas */
         grid-template-columns: repeat(4, 1fr);
         /* Espacio entre los elementos */
-        gap: 3rem;
+        gap: 4rem;
     }
 
     /* ALTO DEL VÍDEO EN post.html */
@@ -1233,11 +1173,6 @@ abbr {
         flex-direction: column;
         /* Separación entre los elementos */
         gap:1rem;
-    }
-
-    .navInterior li {
-        /* Tamaño de la letra de los elementos de navegación interior */
-        font-size: 2rem;
     }
 
     .llevaPunto::after {
@@ -1272,30 +1207,18 @@ abbr {
         gap: 5rem;
     }
 
-    .elementoTemaMes p {
-        /* Tamaño del texto base de los elementos del tema del mes */
-        font-size: 2.2rem;
-        /* Interlineado */
-        line-height: 3rem;
-    }
-
     .elementoTemaMes header h3 {
         /* Tamaño del texto base de los títulos del tema del mes */        
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     .elementoTemaMes header p {
         /* Tamaño del texto base del texto bajo los títulos del tema del mes */
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
-    .numeracionTemaMes {
-        /* Proporción que ocupa la numeración de la sección del tema del mes */
+    .numeracionTemaMes, .figuraTemaMes {
+        /* Proporción que ocupa la numeración/figura de la sección del tema del mes */
         flex:0.3;
-    }
-
-    .figuraTemaMes {
-        /* Proporción que ocupa la figura de la sección del tema del mes */
-        flex:0.3
     }
 
     .textoTemaMes {
@@ -1308,44 +1231,25 @@ abbr {
         padding: 1rem;
     }
 
-    .figuraTemaMes figcaption cite{
-        /* Se reduce el tamaño de la cita de las imágenes en la sección del tema de mes */
-        font-size: 1.2rem;
-        /* Interlineado por si no cabe la cita en una sola línea al disminuir el tamaño */
-        line-height: 2.5rem;
-    }
-
     .textoTemaMes {
         /* Proporción que ocupa el texto de la sección del tema del mes */
         flex:0.5;
     }
-
-    /* Texto "La moda pronta..." */
-    .subtituloPost {
-        font-size: 3rem;
-        /* Interlineado */
-        line-height: 5rem;
-    }
-
-    .tituloSeccionPost {
-        /* Incremento del tamaño de los títulos de las secciones en post.html */
-        font-size: 3rem;
-    }
-
+    
     /* Pie de foto del vídeo */
     .citaVideo {
         /* Margen exterior izquierdo para alinear el pie respecto al vídeo en resoluciones grandes */
         margin-left: 15rem;
     }
 
-    .textoEnlacesInteres {
-        /* Texto 'Te puede interesar' dentro de post.html */
-        font-size: 2rem;
-    }
-
     .navPost li:last-child {
         /* Para alinear el texto del final con los enlaces en el menú de navegación */
-        margin-top: -0.44rem;
+        margin-top: -0.3rem;
+    }  
+    
+    .navHeader li:last-child {
+        /* Para alinear el texto de BLOG con TEMA DEL MES en la navegación superior */
+        margin-top: 0.5rem;
     }  
 
 
