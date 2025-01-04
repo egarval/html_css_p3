@@ -31,6 +31,7 @@ html {
 .containerHeader,
 .containerImgFull,
 .containerMainSpace,
+.containerMainSpace_mAlto,
 .containerMainFull {
     max-width: 100%;
     margin-left: auto;
@@ -39,11 +40,22 @@ html {
 
 /* Contenedores centrados en los contenidos, en función de la resolución se aplicará un max-width y un padding por defecto */
 .containerMainSpace,
+.containerMainSpace_mAlto,
 .containerMainFull {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 6rem;
+}
+
+/* En el post el padding superior es distinto que en los otros contenedores, por eso se hace una división */
+.containerMainSpace,
+.containerMainFull  {
+    padding-top: 6rem; 
+}
+
+.containerMainSpace_mAlto {
+    /* Margen interno superior en el contenedor del post.html */
+    padding-top: 3rem; 
 }
 
 
@@ -51,8 +63,7 @@ html {
 
 
 /* Para las tarjetas que se muestran en la web y la separación de contenido en el index en dispositivos de resolución grande */
-.contenidoIndex,
-.navIconos {
+.contenidoIndex {
     display: flex;
     /* Uso de un flex direction column */
     flex-direction: column;
@@ -62,6 +73,7 @@ html {
 .navIconos {
     /* Se aplica un display flex centrando los contenidos y separándolos */
     display: flex;
+    /* Uso de un flex direction row */
     flex-direction: row;
     /* Para colocar los elementos hijos en el centro respecto al resto del espacio */
     justify-content: center;
@@ -110,7 +122,7 @@ p {
     /* Interlineado base */
     line-height: 3rem;
     /* Tamaño base */
-    font-size: 1.8em;
+    font-size: 1.8rem;
     /* Margen inferior */
     margin-bottom: 2.5rem;
 }
@@ -223,6 +235,8 @@ cite {
     color: inherit;
     /* Margen interno cita*/
     padding: 1rem;
+    /* Tamaño de la cita */
+    font-size: 1.2rem;
 }
 
 cite a {
@@ -398,7 +412,7 @@ h3 a:hover {
 
 .llevaPunto::after {
     /* Colocar punto de separación */
-    margin: 0.2em;
+    margin: 0.2rem;
     content: "\1F784";
     /* Color del punto separador */
     color: rgb(64, 195, 130);
@@ -411,7 +425,6 @@ h3 a:hover {
     margin-top: 0.18rem;
 }
 
-
 /* NAVEGACION DE LA PAGINA post.html */
 
 .navPost {
@@ -422,9 +435,6 @@ h3 a:hover {
     margin-top: -4rem;
     /* Margen separador con el título del post */
     margin-bottom: 1rem;
-}
-
-.navPost {
     /* Se elimina la lista de navegación */
     list-style: none;
 }
@@ -436,7 +446,7 @@ h3 a:hover {
 
 .navPost a, .navPost p {
     /* Tamaño del texto en la navegación interna */
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .navPost a {
@@ -448,7 +458,7 @@ h3 a:hover {
     /* Elemento separador > entre los diferentes elementos */
     content: "\003E";
     /* Margen entre los elementos */
-    margin: 0.5em;
+    margin: 0.5rem;
 }
 
 
@@ -476,26 +486,21 @@ h3 a:hover {
 
 .tarjeta {
     /* Márgenes internos de los textos de las tarjetas sin imagen */
-    padding-top: 2.5em;
+    padding-top: 2.5rem;
     padding-bottom: 6rem;
 }
 
 
 .tarjetaImg .textoTarjetaImg {
     /* Márgenes internos de los textos de las tarjetas con imagen */
-    padding-top: 0.5em;
+    padding-top: 0.5rem;
     padding-bottom: 8rem;
 
 }
 
-.tarjetaImg cite {
-    /* Aumento del tamaño de las citas asociadas a tarjetas con imágenes*/
-    font-size: 1.2rem;
-}
-
  .tarjeta h3 {
      /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
-     font-size: 2rem;   
+     font-size: 2.5rem;   
 }
 
  .coleccionTarjetasBlog .tarjetaImg h3 {
@@ -510,9 +515,14 @@ h3 a:hover {
     /* Tamaño de los textos */
     font-size: 1.8rem;
     /* Margen superior externo con la imagen */
-    margin-top: 1rem;
+    margin-top: -0.5rem;
     /* Margen inferior externo con el enlace en forma de botón */
     margin-bottom: 1rem;
+}
+
+.desarrolloSostenible {
+    /* Para tener una separación con la imagen del desarrollo sostenible en el post.html */
+    padding-top: 1.8rem;
 }
 
 .tarjeta p,
@@ -521,6 +531,11 @@ h3 a:hover {
     margin-top: 2rem;
     /* Se reduce un poco el margen externo inferior respecto al título */
     margin-bottom: 1rem;
+}
+
+.tarjeta p a {
+    /* El botón "Saber más" reduce un poco el tamaño de letra */
+    font-size: 1.8rem;   
 }
 
 .tarjeta h3 a,
@@ -543,7 +558,7 @@ label {
 
 .infoPrivacidad {
     /* Tamaño base del texto "Antes de enviar tus datos... */
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     /* Margen con la parte de abajo */
     margin-bottom: 1rem;
 }
@@ -698,8 +713,8 @@ header .resaltar {
 
 .tituloTemaMes {
     /* Padding interno para alinear el texto Tema del mes enero 2025 en dispositivos móviles */
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
     /* Interlineado para el texto en móvil */
     line-height: 4.5rem;
 }
@@ -718,7 +733,7 @@ header .resaltar {
 /* Título El impacto de la fast fashion en el planeta*/
 .tituloPost {
     /* Tamaño del texto */
-    font-size: 3rem;
+    font-size: 3.5rem;
     /* Separación con el autor */
     margin-bottom: 4rem;
     /* Padding derecho para ajustarse al mockup */
@@ -758,6 +773,7 @@ iframe {
 }
 
 .citaVideo cite {
+    /* Estilo normal de cita en la fuente del vídeo */
     font-style: normal;
 }
 
@@ -781,15 +797,10 @@ ol li:first-child {
 }
 
 ol li {
+    /* Tamaño de letra lista ordenada */
+    font-size: 1.8rem;
     /* Margen entre los elementos de la lista ordenada */
     margin: 1rem;
-}
-
-ol li {
-    /* Tamaño de letra lista ordenada */
-    font-size: 1.7rem;
-    /* Margen entre los elementos de la lista ordenada */
-     margin: 1rem;
 }
 
 /* GESTIÓN ELEMENTOS TEMA DEL MES */
@@ -828,11 +839,11 @@ ol li {
     margin-bottom: 6rem;
 }
 
-
-
 .figuraTemaMes img {
     /* Color de fondo de las imágenes del tema del mes */
     background-color: rgb(255, 255, 255);
+    /* Para que el validador CSS no produzca warnings */
+    color: inherit;
     /* Márgenes interiores para que se vea el borde blanco*/
     padding: 2rem;
 }
@@ -854,7 +865,7 @@ ol li {
 }
 
 
-/* TEXTOS EN EL FORM.HTML */
+/* TEXTOS EN EL POST.HTML */
 
 /* TEXTO "Te puede interesar" EN EL form.html */
 .textoEnlacesInteres {
@@ -877,13 +888,13 @@ ol li {
 /* Texto "La moda pronta..." */
 .subtituloPost {
     /* Margen inferior texto post */
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     /* El tamaño de fuentte se restablece */
     font-weight: normal;
     /* Tamaño de letra */
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* Interlineado */
-    line-height: 3rem;
+    line-height: 3.5rem;
 }
 
 /* Titulos de las secciones dentro del html de post */
@@ -919,6 +930,8 @@ abbr {
 .separador {
     /* Color de fondo */
     background-color: rgb(0, 0, 0);
+    /* Para que el validador CSS no produzca warnings */
+    color: inherit;
     /* Ocupa todo el ancho */
     width: 100%;
     /* Alto */
@@ -926,6 +939,7 @@ abbr {
     /* Margen externo inferior con otros enlaces de interés */
     margin-bottom: 3rem;
 }
+
 
 /* MEDIA QUERIES */
 
@@ -947,14 +961,49 @@ abbr {
         /* Espacio entre las columnas */
         gap: 4rem;
     }
+
+    /* NAVEGACIÓN DEL POST */
+    .navPost a, .navPost p {
+        /* Tamaño del texto en la navegación interna */
+        font-size: 2rem;
+    }
 }
 
 /* Tablet */
 @media screen and (min-width: 649px) and (max-width: 1199px) {
 
+    /* GESTIÓN DE LOS TEXTOS EN LA APLICACIÓN */
+    p {
+        /* Interlineado base */
+        line-height: 3rem;
+        /* Tamaño base */
+        font-size: 2rem;
+    }
+    
+    .tarjeta h3 {
+        /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
+        font-size: 2.8rem;   
+    }
+
     .citaImagenCompleta cite {
         /* Tamaño texto cita principal */
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    ol li {
+        /* Tamaño fuente de letra texto ordenado */
+        font-size: 2rem;
+    }
+
+    /* Citas */
+    cite {
+        /* Se incrementa el tamaño de la cita */
+        font-size: 1.3rem;
+    }
+
+    .navInterior li {
+        /* Tamaño elementos navegación interior tema-del-mes*/
+        font-size: 1.7rem;
     }
 
     input[type="text"],
@@ -976,20 +1025,43 @@ abbr {
         /* Alto del vídeo en post.html */
         height: 40rem;
     }
+
+    .navPost li:last-child {
+        /* Para alinear el texto del final con los enlaces en el menú de navegación */
+        margin-top: -0.2rem;
+    }
 }
 
 /* Ordenador */
 @media screen and (min-width: 1200px) {
 
+    /* GESTIÓN DE LOS TEXTOS EN LA APLICACIÓN */
+    p {
+        /* Interlineado base */
+        line-height: 3.5rem;
+        /* Tamaño base */
+        font-size: 2.2rem;
+    }
+
+    .tarjeta h3 {
+        /* Tamaño por defecto de las tarjetas que NO tienen imagen asociada */
+        font-size: 2.8rem;   
+    }
+
     header h2 {
         /* Tamaño títulos artículos index para dispositivos grandes */
-        font-size: 3rem;
+        font-size: 3.5rem;
+    }
+
+    ol li {
+        /* Tamaño fuente de letra texto ordenado */
+        font-size: 2.2rem;
     }
 
     /* GESTIÓN DE LOS CONTENEDORES PARA EL CONTENIDO PRINCIPAL */
 
     /* En dispositivos grandes se reduce el ancho del contenido de algunas páginas */
-    .containerMainSpace {
+    .containerMainSpace, .containerMainSpace_mAlto {
         max-width: 1140px;
     }
 
@@ -1165,7 +1237,7 @@ abbr {
 
     .navInterior li {
         /* Tamaño de la letra de los elementos de navegación interior */
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .llevaPunto::after {
@@ -1200,6 +1272,22 @@ abbr {
         gap: 5rem;
     }
 
+    .elementoTemaMes p {
+        /* Tamaño del texto base de los elementos del tema del mes */
+        font-size: 2.2rem;
+        /* Interlineado */
+        line-height: 3rem;
+    }
+
+    .elementoTemaMes header h3 {
+        /* Tamaño del texto base de los títulos del tema del mes */        
+        font-size: 3.5rem;
+    }
+    .elementoTemaMes header p {
+        /* Tamaño del texto base del texto bajo los títulos del tema del mes */
+        font-size: 2rem;
+    }
+
     .numeracionTemaMes {
         /* Proporción que ocupa la numeración de la sección del tema del mes */
         flex:0.3;
@@ -1222,9 +1310,9 @@ abbr {
 
     .figuraTemaMes figcaption cite{
         /* Se reduce el tamaño de la cita de las imágenes en la sección del tema de mes */
-        font-size: 1rem;
+        font-size: 1.2rem;
         /* Interlineado por si no cabe la cita en una sola línea al disminuir el tamaño */
-        line-height: 2rem;
+        line-height: 2.5rem;
     }
 
     .textoTemaMes {
@@ -1254,4 +1342,11 @@ abbr {
         /* Texto 'Te puede interesar' dentro de post.html */
         font-size: 2rem;
     }
+
+    .navPost li:last-child {
+        /* Para alinear el texto del final con los enlaces en el menú de navegación */
+        margin-top: -0.44rem;
+    }  
+
+
 }
