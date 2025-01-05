@@ -1281,8 +1281,7 @@ abbr {
         flex: 0.7;
     }
 
-    /////////////////////////
-
+    /*011*/  
     .contenidoIndex aside {
         /* Lo que ocupa el formulario */
         flex: 0.5;
@@ -1290,6 +1289,7 @@ abbr {
 
     /* GESTIÓN DE LAS TARJETAS EN EL BLOG + POST */
 
+    /*010*/  
     .coleccionTarjetasBlog {
         /* Creación de columnas */
         grid-template-columns: repeat(3, 1fr);
@@ -1297,6 +1297,7 @@ abbr {
         gap: 4rem;
     }
 
+    /*010*/ 
     .coleccionTarjetasPost {
         /* Creación de columnas */
         grid-template-columns: repeat(4, 1fr);
@@ -1304,6 +1305,7 @@ abbr {
         gap: 4rem;
     }
 
+    /*001*/     
     iframe {
         /* ALTO DEL VÍDEO EN post.html */
         width: 70%;
@@ -1312,6 +1314,7 @@ abbr {
 
     /* GESTIÓN CONTENEDORES TEMA DEL MES */
 
+    /*010*/ 
     .navInterior {
         /* Cambiamos la disposición de elementos para que ahora estén puestos en columna */
         flex-direction: column;
@@ -1319,22 +1322,26 @@ abbr {
         gap:1rem;
     }
 
+    /*011*/ 
     .llevaPunto::after {
         /* Se elimina el punto después de cada elemento de la navegación */
         content:"";
     }
 
+    /*010*/ 
     .contenedorTemaMes {
         /* Se incluye un display flex para colocar la navegación y las secciones en línea para dispositivos de resolución grande */
         display:flex;
         flex-direction: row;
     }
 
+    /*011*/ 
     .contenedorTemaMes aside {
         /* Proporción que ocupa la navegación interna */
         flex: 0.2;
     }
 
+    /*020*/ 
     .contenedorTemaMes .elementosTemaMes {
         /* Proporción que ocupa el conjunto de secciones del tema del mes */
         flex: 0.8;
@@ -1343,6 +1350,7 @@ abbr {
         flex-direction: column;
     }
 
+    /*010*/ 
     .elementoTemaMes {
         /* Dentro de cada elemento, aplicamos otro display flex para ubicar los elementos en filas */
         display: flex;
@@ -1351,46 +1359,56 @@ abbr {
         gap: 5rem;
     }
 
+    /*012*/ 
     .elementoTemaMes header h3 {
         /* Tamaño del texto base de los títulos del tema del mes */        
         font-size: 3rem;
     }
+
+    /*012*/ 
     .elementoTemaMes header p {
         /* Tamaño del texto base del texto bajo los títulos del tema del mes */
         font-size: 1.5rem;
     }
 
+    /*010*/ 
     .numeracionTemaMes, .figuraTemaMes {
         /* Proporción que ocupa la numeración/figura de la sección del tema del mes */
         flex:0.3;
     }
 
+    /*010*/ 
     .textoTemaMes {
         /* Proporción que ocupa el texto de la sección del tema del mes */      
         flex:0.40
     }
 
+    /*011*/ 
     .figuraTemaMes img {
         /* Reducimos el padding de la figura de la sección del tema del mes */
         padding: 1rem;
     }
 
+    /*010*/ 
     .textoTemaMes {
         /* Proporción que ocupa el texto de la sección del tema del mes */
         flex:0.5;
     }
     
+    /*010*/ 
     .citaVideo {
         /* Pie de foto del vídeo */
         /* Margen exterior izquierdo para alinear el pie respecto al vídeo en resoluciones grandes */
         margin-left: 15rem;
     }
 
+    /*021*/ 
     .navPost li:last-child {
         /* Para alinear el texto del final con los enlaces en el menú de navegación */
         margin-top: -0.3rem;
     }  
     
+    /*021*/ 
     .navHeader li:last-child {
         /* Para alinear el texto de BLOG con TEMA DEL MES en la navegación superior */
         margin-top: 0.5rem;
