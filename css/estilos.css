@@ -499,7 +499,7 @@ h3 a:hover {
 /*021*/
 .navPost li:last-child {
     /* Para alinear el texto con los enlaces en el menú de navegación */
-    margin-top: -0.6rem;
+    margin-top: -0.3rem;
 }
 
 /*011*/
@@ -1124,6 +1124,12 @@ abbr {
         /* Para alinear el texto del final con los enlaces en el menú de navegación */
         margin-top: -0.5rem;
     }
+
+    /*021*/
+    .navInterior li:last-child {
+        /* Para alinear el texto del final con los enlaces en el menú de navegación */
+        margin-top: 0.2rem;
+    }
 }
 
 /* Ordenador */
@@ -1285,6 +1291,7 @@ abbr {
     .contenidoIndex aside {
         /* Lo que ocupa el formulario */
         flex: 0.5;
+        margin-top: 8rem;
     }
 
     /* GESTIÓN DE LAS TARJETAS EN EL BLOG + POST */
@@ -1414,5 +1421,9 @@ abbr {
         margin-top: 0.5rem;
     }  
 
+    /*011*/ 
+    .elementoTemaMes cite {
+        font-size: 1.1rem;
+    }
 
 }
